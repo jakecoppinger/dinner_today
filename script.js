@@ -36,22 +36,36 @@ function getDayOfWeek(d) {
     return (d.getDay()+6) % 7;
 }
 
-function print_todays_date() {
-
-}
-
-function meal(portion,offset) {
+function meal(portion,dayOffset) {
     var d = new Date();
-    dayData = dinner_data[getDinnerWeek().toString()]
 
+    week = getDinnerWeek(d) + Math.floor(dayOffset / 7)
+    dayData = dinner_data[week.toString()]
     dayOfWeek = getDayOfWeek(d);
-    mealStr = dayData[portion][dayOfWeek + offset];
 
-    console.log(mealStr);
-    return mealStr
+    return dayData[portion][dayOfWeek + dayOffset]
 }
 
 function printMeal(portion,offset=0) {
     document.write(meal(portion,offset));
 }
 
+function getOrdinal(n) {
+    var s=["th","st","nd","rd"],
+    v=n%100;
+    return n+(s[(v-20)%10]||s[v]||s[0]);
+ }
+
+
+function getHumanDate() {
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+    var d = new Date();
+    var dayOfMonth = d.getDate()
+    var s = getOrdinal(dayOfMonth)
+    + " of " + monthNames[d.getMonth()]
+
+    document.write(s);
+}
