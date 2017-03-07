@@ -40,18 +40,18 @@ function print_todays_date() {
 
 }
 
-function meal(s) {
+function meal(portion,offset) {
     var d = new Date();
     dayData = dinner_data[getDinnerWeek().toString()]
 
     dayOfWeek = getDayOfWeek(d);
-    mealStr = dayData[s][dayOfWeek];
+    mealStr = dayData[portion][dayOfWeek + offset];
 
     console.log(mealStr);
     return mealStr
 }
 
-function printMeal(s) {
-    document.write(meal(s));
+function printMeal(portion,offset=0) {
+    document.write(meal(portion,offset));
 }
 
