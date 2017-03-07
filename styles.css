@@ -1,4 +1,10 @@
 h2 {
     font-family: akzidenz-grotesk_pro_medium;
     font-size: 2em;
+    text-align: center;
+}
+
+p {
+    font-family: akzidenz-grotesk_pro_light;
+    text-align: center;
 }
