@@ -1,11 +1,18 @@
-h1,h2,h3,p {
+h1,
+h2,
+h3,
+p {
+    /*
     color: white;
+    */
+    color:#333333;
 }
 
 h2 {
     font-family: akzidenz-grotesk_pro_medium;
     font-size: 2em;
     text-align: center;
+    letter-spacing: 1.05;
 }
 
 h3 {
@@ -21,5 +28,7 @@ p {
 }
 
 body {
-        background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    /*
+ background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+*/
 }
