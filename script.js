@@ -33,39 +33,43 @@ function getDinnerWeek() {
 
 function getDayOfWeek(d) {
     // Zero based!
-    return (d.getDay()+6) % 7;
+    return (d.getDay() + 6) % 7;
 }
 
-function meal(portion,dayOffset) {
+function meal(portion, dayOffset) {
     var d = new Date();
 
-    week = getDinnerWeek(d) + Math.floor(dayOffset / 7)
+    dayOfWeek = getDayOfWeek(d) + dayOffset;
+    week = getDinnerWeek(d) + Math.floor(dayOfWeek / 7)
     dayData = dinner_data[week.toString()]
-    dayOfWeek = getDayOfWeek(d);
 
-    return dayData[portion][dayOfWeek + dayOffset]
+    // console.log("dayOffset: " + dayOffset)
+    // console.log("day of week: " + dayOfWeek);
+    // console.log("week: " + getDinnerWeek(d) + Math.floor(dayOffset / 7));
+    // console.log("Math.floor(dayOffset / 7): " + Math.floor(dayOffset / 7));
+
+    return dayData[portion][dayOfWeek % 7]
 }
 
-function printMeal(portion,offset=0) {
-    document.write(meal(portion,offset));
+function printMeal(portion, offset = 0) {
+    document.write(meal(portion, offset));
 }
 
 function getOrdinal(n) {
-    var s=["th","st","nd","rd"],
-    v=n%100;
-    return n+(s[(v-20)%10]||s[v]||s[0]);
- }
+    var s = ["th", "st", "nd", "rd"],
+        v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
 
 
 function getHumanDate() {
     var monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+        "July", "August", "September", "October", "November", "December"
+    ];
 
     var d = new Date();
     var dayOfMonth = d.getDate()
-    var s = getOrdinal(dayOfMonth)
-    + " of " + monthNames[d.getMonth()]
+    var s = getOrdinal(dayOfMonth) + " of " + monthNames[d.getMonth()]
 
     document.write(s);
 }
