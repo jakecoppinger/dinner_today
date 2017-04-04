@@ -27,16 +27,14 @@
 
     var analyticsID = "913895360";
 
-    console.log("Accessed from:");
-    console.log(location.hostname);
-
+    console.log("Accessed from hostname: " + location.hostname);
 
     if (location.hostname === "localhost" ||
         location.hostname === "127.0.0.1" ||
         location.hostname === "" ||
         location.protocol === "file:"
     ) {
-        console.log("Running on local machine.");
+        console.log("Appears to be running on local machine.");
         analyticsID = "3515389294";
     }
 
