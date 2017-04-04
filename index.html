@@ -24,7 +24,15 @@
                 }
             }, p = ["addEventProperties", "addUserProperties", "clearEventProperties", "identify", "removeEventProperty", "setEventProperties", "track", "unsetEventProperty"], c = 0; c < p.length; c++) heap[p[c]] = o(p[c])
     };
-    heap.load("913895360");
+
+    var analyticsID = "913895360";
+
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.protocol === "file:") {
+        console.log("Running on local machine.");
+        analyticsID = "3515389294";
+    }
+
+    heap.load(analyticsID);
     </script>
 </head>
 
