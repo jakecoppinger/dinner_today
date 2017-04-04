@@ -5,7 +5,9 @@ p {
     /*
     color: white;
     */
+    
     color:#333333;
+    
 }
 
 h2 {
@@ -31,3 +33,16 @@ body {
  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 */
 }
+
+/*
+Div containing todays dinner
+
+*/
+div#todaydinner {
+
+}
+
+div#tomorrowdinner {
+    
+}
+

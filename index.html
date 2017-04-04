@@ -7,13 +7,26 @@
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript">
-    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-      heap.load("913895360");
-</script>
+    window.heap = window.heap || [], heap.load = function(e, t) {
+        window.heap.appid = e, window.heap.config = t = t || {};
+        var r = t.forceSSL || "https:" === document.location.protocol,
+            a = document.createElement("script");
+        a.type = "text/javascript", a.async = !0, a.src = (r ? "https:" : "http:") + "//cdn.heapanalytics.com/js/heap-" + e + ".js";
+        var n = document.getElementsByTagName("script")[0];
+        n.parentNode.insertBefore(a, n);
+        for (var o = function(e) {
+                return function() {
+                    heap.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            }, p = ["addEventProperties", "addUserProperties", "clearEventProperties", "identify", "removeEventProperty", "setEventProperties", "track", "unsetEventProperty"], c = 0; c < p.length; c++) heap[p[c]] = o(p[c])
+    };
+    heap.load("913895360");
+    </script>
 </head>
 
 <body>
-    <h2>
+    <div id="todaydinner">
+        <h2>
         Dinner today (<script language="JavaScript">
         getHumanDate();
         </script>)
@@ -22,49 +35,49 @@
         printMeal("Dinner");
         </script>
     </h2>
-
-    <h2>
+        <h2>
         Vegetables:
         <br>
         <script language="JavaScript">
         printMeal("Vegetables");
         </script>
     </h2>
-    <h2>
+        <h2>
         Vegetarian option:
         <br>
         <script language="JavaScript">
         printMeal("Vegetarian");
         </script>
     </h2>
-
-    <h3>
+    </div>
+    <div id="tomorrowdinner">
+        <h3>
         Dinner tomorrow:
         <br>
         <script language="JavaScript">
         printMeal("Dinner",1);
         </script>
-</h3>
-<h3>
+    </h3>
+        <h3>
         Vegetables:
         <br>
         <script language="JavaScript">
         printMeal("Vegetables",1);
         </script>
-</h3>
-
-<h3>
+    </h3>
+        <h3>
         Vegetarian option:
         <br>
         <script language="JavaScript">
         printMeal("Vegetarian",1);
         </script>
-</h3>
-
-
-    <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
-    <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
-    </p>
+    </h3>
+    </div>
+    <div id="footer">
+        <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
+        <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
+        </p>
+    </div>
 </body>
 
 </html>
