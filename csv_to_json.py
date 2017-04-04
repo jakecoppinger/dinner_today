@@ -4,7 +4,12 @@ import csv
 from pprint import pprint
 import json
 
-json_filename = "dinner_data.json"
+# Change this to data.json for pure JSON
+json_filename = "data.js"
+
+# This allows JavaScript to read the JSON as an object.
+# Replace with empty string for pure JSON
+json_prefix = "dinner_data = "
 
 dinners = {}
 
@@ -24,11 +29,11 @@ for week in range(1,9):
     dinners[str(week)] = result
 
 
-pprint(dinners)
+#pprint(dinners)
    
 with open(json_filename, 'w') as outfile:
-    outfile.write(json.dumps(dinners, sort_keys=True, 
+    outfile.write(json_prefix + json.dumps(dinners, sort_keys=True, 
         indent=4, separators=(',', ': ')))
 
-print("///")
-print("Data written to " + json_filename)
+
+print("Data written to " + json_filename + " with prefix '" + json_prefix +'')
