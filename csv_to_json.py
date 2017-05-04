@@ -13,7 +13,7 @@ json_prefix = "dinner_data = "
 
 dinners = {}
 
-for week in range(1,9):
+for week in range(1,16):
     reader = csv.reader(open('data/week' + str(week) + '.csv'))
 
     result = {}
