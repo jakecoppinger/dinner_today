@@ -41,6 +41,12 @@ function meal(portion, dayOffset) {
 
     dayOfWeek = getDayOfWeek(d) + dayOffset;
     week = getDinnerWeek(d) + Math.floor(dayOfWeek / 7)
+
+    // Account for midsem:
+    if(week >= 8) {
+        week -= 1;
+    }
+
     dayData = dinner_data[week.toString()]
 
     // console.log("dayOffset: " + dayOffset)

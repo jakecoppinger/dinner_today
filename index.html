@@ -44,56 +44,91 @@
 
 <body>
     <div id="todaydinner">
-        <h2>
-        Dinner today (<script language="JavaScript">
+        
+        <script language="JavaScript">
+
+
+            var output = "<h1>"
+            var diningHallClosed = 0;
+            var d = new Date();
+
+            if((d.getHours() >= 19 && d.getMinutes() > 15)
+                || d.getHours() >= 20) {
+                diningHallClosed = 1;
+            }
+        
+            if(!diningHallClosed) {
+                output += "Dinner today"
+            } else {
+                output += "Today's Dinner is over. Dinner tomorrow"
+            }
+            output += ":"
+            output += "</h1>"
+            document.write(output)
+        </script>
+ 
+        <!--
+        <script language="JavaScript">
         getHumanDate();
         </script>)
-        <br>
-        <script language="JavaScript">
-        printMeal("Dinner");
+        -->
+    <h2>
+         <script language="JavaScript">
+        printMeal("Dinner",diningHallClosed);
         </script>
-</h2>
-  
-     </h2>
+
+    </h2>
+        </h2>
         <h2>
         Vegetables:
         <br>
         <script language="JavaScript">
-        printMeal("Vegetables");
+        printMeal("Vegetables",diningHallClosed);
         </script>
     </h2>
         <h2>
         Vegetarian option:
         <br>
         <script language="JavaScript">
-        printMeal("Vegetarian");
+        printMeal("Vegetarian",diningHallClosed);
         </script>
     </h2>
     </div>
     <div id="tomorrowdinner">
         <h3>
-        Dinner tomorrow:
+
+        <script language="JavaScript">
+            var output = "Dinner tomorrow"
+
+            if(diningHallClosed) {
+                output = "Dinner day after tomorrow"
+            }
+            output += ":"
+            document.write(output);
+        </script>
+
+
         <br>
         <script language="JavaScript">
-        printMeal("Dinner",1);
+        printMeal("Dinner",1 + diningHallClosed);
         </script>
     </h3>
         <h3>
         Vegetables:
         <br>
         <script language="JavaScript">
-        printMeal("Vegetables",1);
+        printMeal("Vegetables",1 + diningHallClosed);
         </script>
     </h3>
         <h3>
         Vegetarian option:
         <br>
         <script language="JavaScript">
-        printMeal("Vegetarian",1);
+        printMeal("Vegetarian",1 + diningHallClosed);
         </script>
-    </h3> 
-
+    </h3>
     </div>
+    <br>
     <div id="footer">
         <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
         <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
