@@ -43,9 +43,9 @@ function meal(portion, dayOffset) {
     week = getDinnerWeek(d) + Math.floor(dayOfWeek / 7)
 
     // Account for midsem:
-    if(week >= 8) {
-        week -= 1;
-    }
+    // if(week >= 8) {
+    //     week -= 1;
+    // }
 
     dayData = dinner_data[week.toString()]
 
