@@ -202,6 +202,35 @@ dinner_data = {
             "Zucchini, Potato And Sun Dried Tomato Risotto Cakes With Lentils"
         ]
     },
+    "16": {
+        "Dinner": [
+            "Stir Fried Chicken In Black Bean Sauce With Jasmine Rice",
+            "Beef Or Chicken Enchiladas With A Tomato Cheese With Baked Mozzarella",
+            "Madras Chicken Korma With Saffron Rice",
+            "Italian Style Beef Lasagne With A Mozzarella Topping",
+            "Chicken and Mushroom Pie with Puff Pastry",
+            "Steak Sandwiches On Ciabatta Bread With Caramelised Onions And French Fries",
+            "Grilled Chicken Schnitzel Served With A Red Wine Sauce"
+        ],
+        "Vegetables": [
+            "Steamed Rice \nAsian Cut Carrots\nSteamed Broccoli",
+            "Seared Zucchini\nButter Beans With Shallots\nSteamed Corn",
+            "Sate Vegetables\nSteamed, Cauliflower Pilaf Rice",
+            "Medley Of Beans,\nVegetable Ratatouille",
+            "Mashed Potatoes\nCorn Kernels\nBroccoli Flourettes",
+            "French Fries\nBroccoli Flourettes\nMinted Peas",
+            "Baked Paprika Potatoes\nCauliflower Mornay\nCorn On The Cob"
+        ],
+        "Vegetarian": [
+            "Wok Tossed Choy Sum & Tofu With Egg Noodles",
+            "Spicy Bean Enchiladas With A Tomato Sauce",
+            "Spicy Vegetable Dahl With Lentils And Vegetables",
+            "Vegetable Lasagne With Chick Peas",
+            "Zucchini, Cannellini Bean And Red Pepper Pot Pies",
+            "Grilled Vegetable And Tofu Skewers Served With Jasmine Rice And Sate Sauce",
+            "Leek, Zucchini & Red Pepper Strudel Served With A Cream Pesto Sauce"
+        ]
+    },
     "2": {
         "Dinner": [
             "Spiced Chicken Breast With A Caponato Sauce",
