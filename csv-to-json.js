@@ -85,35 +85,31 @@ function processWeekCSV(data, callback) {
     return week;
 }
 
+function loop(callback) {
+    const startingWeek = 30;
+    const csvStartWeek = 1;
+    const csvEndWeek = 8;
 
-var startingWeek = 30;
+    var menu = {};
 
-const csvStartWeek = 1;
-const csvEndWeek = 8;
+    var csvWeek = csvStartWeek;
+    var week = startingWeek;
 
-var menu = {};
+    var fileLoop = function(callback) {
+        parseCSV('raw_data/week' + csvWeek + '.csv', function(output) {
+            menu[week] = output;
+            csvWeek++;
+            week++;
 
-var csvWeek = csvStartWeek;
-var week = startingWeek;
-
-function fileLoop(callback) {
-
-    var filename = 'raw_data/week' + csvWeek + '.csv';
-
-    parseCSV(filename, function(output) {
-        menu[week] = output;
-
-        csvWeek++;
-        week++;
-
-        // any more items in array? continue loop
-        if(csvWeek <= csvEndWeek) {
-            fileLoop(callback);   
-        } else {
-            callback(menu);
-        }
-
-    });
+            // any more items in array? continue loop
+            if(csvWeek <= csvEndWeek) {
+                fileLoop(callback);   
+            } else {
+                callback(menu);
+            }
+        });
+    }
+    fileLoop(callback);    
 }
 
 function parseCSV(filename, callback) {
@@ -128,10 +124,6 @@ function parseCSV(filename, callback) {
     });
 }
 
-fileLoop(function(output ) {
+loop(function(output ) {
     console.log(prettyJSON(output));
 });
-
-
-
-
