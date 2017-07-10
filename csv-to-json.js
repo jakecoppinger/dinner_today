@@ -11,21 +11,11 @@ if(typeof(String.prototype.trim) === "undefined")
     };
 }
 
-var prettyJSON = function(obj) {
+function prettyJSON(obj) {
     return JSON.stringify(obj, null, 4)
 }
 
-fs.readFile('raw_data/week1.csv', 'utf8', function (err,data) {
-    if (err) {
-        return console.log(err);
-    }
-
-    processWeekCSV(data, function(output) {
-        console.log(prettyJSON(output));
-    });
-});
-
-var processWeekCSV = function(data, callback) {
+function processWeekCSV(data, callback) {
     var week = {};
 
     parse(data, {comment: '#',columns:true}, function(err, output) {
@@ -66,6 +56,11 @@ var processWeekCSV = function(data, callback) {
                     var cleanItem = chunk[day].trim().replace(/\s+/g,' ');
 
                     if(cleanItem != "") {
+                        // { Dinner: 'Thai Yellow Chicken and Potato Curry with'
+                        week[day]["Vegetables"] = week[day]["Vegetables"] || [];
+
+                        console.log(week[day]);
+
                         week[day]["Vegetables"].push(cleanItem);
                     }
                 }
@@ -91,5 +86,53 @@ var processWeekCSV = function(data, callback) {
     }
     return week;
 }
+
+
+var startingWeek = 30;
+
+const csvStartWeek = 1;
+const csvEndWeek = 8;
+
+var menu = {};
+
+
+var csvWeek = csvStartWeek;
+var week = startingWeek;
+
+var loop = function() {
+
+    asyncLoop(function() {
+        csvWeek++;
+        week++;
+
+        // any more items in array? continue loop
+        if(csvWeek <= csvEndWeek) {
+            loop();   
+        } else {
+            console.log(prettyJSON(menu));
+        }
+
+    });
+
+}
+
+function asyncLoop(callback) {
+
+    fs.readFile('raw_data/week' + csvWeek + '.csv', 'utf8', function(err,data) {
+        if (err) {
+            return console.log(err);
+        }
+
+        processWeekCSV(data, function(output) {
+            menu[week] = output;
+            // console.log(prettyJSON(output));
+            callback();
+        });
+    });
+}
+
+loop();
+
+
 
 
