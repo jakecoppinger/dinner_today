@@ -23,8 +23,6 @@ fs.readFile('raw_data/week1.csv', 'utf8', function (err,data) {
     processWeekCSV(data, function(output) {
         console.log(prettyJSON(output));
     });
-
-    
 });
 
 var processWeekCSV = function(data, callback) {
@@ -46,27 +44,12 @@ var processWeekCSV = function(data, callback) {
             var chunk = weekObj[index];
             var mealName = chunk[""];
 
-            if(includedMeals[mealName] == true) {
-
-                for(var day in chunk) {
-                    if(!day) continue;
-
-                    week[day] = week[day] || {};
-                    var cleanItem = chunk[day].trim().replace(/\s+/g,' ');
-
-                    if(mealName == "Vegetables") {
-                        week[day][mealName] = week[day][mealName] || [];
-                        week[day][mealName].push(cleanItem);
-                    } else {
-                        week[day][mealName] = cleanItem;
-                    } 
-                }
-            }
-
             if(mealName == '') {
                 var emptyDays = 0;
                 var mondayEmpty = false;
 
+                // Check if only Monday has data;
+                // If so, probably not a vegetable!
                 for(var day in chunk) {
                     if(!day) continue;
                     if(chunk[day] == "") {
@@ -76,8 +59,7 @@ var processWeekCSV = function(data, callback) {
                 }
 
                 if(emptyDays == 6 && !mondayEmpty) continue; // Not vegetables
-                console.log(prettyJSON(chunk));
-
+                
                 // Add extra vegetables
                 for(var day in chunk) {
                     if(!day) continue;
@@ -88,7 +70,23 @@ var processWeekCSV = function(data, callback) {
                     }
                 }
             }
-            // console.log("///");
+
+            // We only want specified meals
+            if(!includedMeals[mealName]) continue;
+
+            for(var day in chunk) {
+                if(!day) continue;
+
+                week[day] = week[day] || {};
+                var cleanItem = chunk[day].trim().replace(/\s+/g,' ');
+
+                if(mealName == "Vegetables") {
+                    week[day][mealName] = week[day][mealName] || [];
+                    week[day][mealName].push(cleanItem);
+                } else {
+                    week[day][mealName] = cleanItem;
+                } 
+            }
         }
     }
     return week;
