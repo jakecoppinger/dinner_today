@@ -59,8 +59,6 @@ function processWeekCSV(data, callback) {
                         // { Dinner: 'Thai Yellow Chicken and Potato Curry with'
                         week[day]["Vegetables"] = week[day]["Vegetables"] || [];
 
-                        console.log(week[day]);
-
                         week[day]["Vegetables"].push(cleanItem);
                     }
                 }
@@ -95,43 +93,44 @@ const csvEndWeek = 8;
 
 var menu = {};
 
-
 var csvWeek = csvStartWeek;
 var week = startingWeek;
 
-var loop = function() {
+function fileLoop(callback) {
 
-    asyncLoop(function() {
+    var filename = 'raw_data/week' + csvWeek + '.csv';
+
+    parseCSV(filename, function(output) {
+        menu[week] = output;
+
         csvWeek++;
         week++;
 
         // any more items in array? continue loop
         if(csvWeek <= csvEndWeek) {
-            loop();   
+            fileLoop(callback);   
         } else {
-            console.log(prettyJSON(menu));
+            callback(menu);
         }
 
     });
-
 }
 
-function asyncLoop(callback) {
-
-    fs.readFile('raw_data/week' + csvWeek + '.csv', 'utf8', function(err,data) {
+function parseCSV(filename, callback) {
+    fs.readFile(filename, 'utf8', function(err,data) {
         if (err) {
             return console.log(err);
         }
 
         processWeekCSV(data, function(output) {
-            menu[week] = output;
-            // console.log(prettyJSON(output));
-            callback();
+            callback(output);
         });
     });
 }
 
-loop();
+fileLoop(function(output ) {
+    console.log(prettyJSON(output));
+});
 
 
 
