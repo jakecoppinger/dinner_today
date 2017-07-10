@@ -1,0 +1,24 @@
+{
+  "name": "dinner_today",
+  "version": "1.0.0",
+  "description": "Dinner Today ============",
+  "main": "csv-to-json.js",
+  "dependencies": {},
+  "devDependencies": {
+    "csv-parse": "^1.2.0",
+    "should": "^11.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakecoppinger/dinner_today.git"
+  },
+  "author": "Jake Coppinger <jake@jakecoppinger.com> (http://www.jakecoppinger.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakecoppinger/dinner_today/issues"
+  },
+  "homepage": "https://github.com/jakecoppinger/dinner_today#readme"
+}
