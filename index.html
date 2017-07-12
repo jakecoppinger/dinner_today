@@ -44,40 +44,60 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
+
+        <div id="header">
+            <h1 id="title">dinnertoday.info</h1>
+            <h1 id="date">{{humanDate}}</h1>
+        </div>
+
         <div id="nomenu" v-if="noMenu">
             <h2>New dinner menu not released yet - I will update this when it is.</h2>
         </div>
         <div id="menu">
             <div id="dinnertoday" v-if="mealsTodayData">
-                <h2>Dinner Today / {{humanDate}}</h2>
-                <h2>{{mealsToday.Dinner}}</h2>
-                <h2>Vegetables:</h2>
+
+                <h3>{{mealsToday.Dinner}}</h3>
+
+                <h2>vegetarian</h2>
+                <h3>{{mealsToday.Vegetarian}}</h3>
+
+                <h2>vegetables</h2>
+                <h3>
                 <ul>
                     <li v-for="vegetable in mealsToday.Vegetables">
                         {{ vegetable }}
                     </li>
                 </ul>
-                <h2>Vegetarian option:<br>{{mealsToday.Vegetarian}}</h2>
+                </h3>
             </div>
+
             <div id="dinnertomorrow" v-if="mealsTomorrowData">
-                <h3>Dinner tomorrow</h3>
+                <h1>tomorrow</h1>
                 <h3>{{mealsTomorrow.Dinner}}</h3>
-                <h3>Vegetables:</h3>
-                <ul>
+
+                <h2>vegetarian:</h2>
+                <h3>{{mealsTomorrow.Vegetarian}}</h3>
+
+                <h2>vegetables</h3>
+                <h3><ul>
                     <li v-for="vegetable in mealsTomorrow.Vegetables">
                         {{ vegetable }}
                     </li>
                 </ul>
-                <h3>Vegetarian option:<br>{{mealsTomorrow.Vegetarian}}</h3>
+                </h3>
+
             </div>
+
         </div>
         <br>
-        <div id="footer">
+       <!--
+         <div id="footer">
             <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
             <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
             </p>
         </div>
+    -->
     </div>
 </body>
 
