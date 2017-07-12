@@ -146,7 +146,7 @@ function mealsForDate(data,d) {
 
 //var d = new Date(); 
 
-var today = parseISOLocal('2017-07-24T19:40:00');
+var today = new Date(); //parseISOLocal('2017-07-24T19:40:00');
 
 var tomorrow = new Date(today);
 tomorrow.setDate(tomorrow.getDate() + 1);
