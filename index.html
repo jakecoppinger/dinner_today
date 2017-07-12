@@ -51,9 +51,7 @@
             <h1 id="date">{{humanDate}}</h1>
         </div>
 
-        <div id="nomenu" v-if="noMenu">
-            <h2>New dinner menu not released yet - I will update this when it is.</h2>
-        </div>
+
         <div id="menu">
             <div id="dinnertoday" v-if="mealsTodayData">
 
@@ -86,9 +84,11 @@
                     </li>
                 </ul>
                 </h3>
-
             </div>
+        </div>
 
+        <div id="nomenu" v-if="noMenu">
+            <h2>New dinner menu not released yet - I will update this when it is.</h2>
         </div>
         <br>
 
