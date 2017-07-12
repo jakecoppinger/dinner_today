@@ -6,8 +6,8 @@
     <meta name="description" content="A simple webapp for your college that answers one question well: What's for dinner?">
     <meta name="author" content="Jake Coppinger">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
     <script src="data.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript">
@@ -44,63 +44,48 @@
 
 <body>
     <div id="todaydinner">
-        
-        <script language="JavaScript">
-
-
-            var output = "<h1>"
-            var diningHallClosed = 0;
-            var d = new Date();
-
-            if((d.getHours() >= 19 && d.getMinutes() > 15)
-                || d.getHours() >= 20) {
-                diningHallClosed = 1;
-            }
-        
-            if(!diningHallClosed) {
-                output += "Dinner today"
-            } else {
-                output += "Today's Dinner is over. Dinner tomorrow"
-            }
-            output += ":"
-            output += "</h1>"
-            document.write(output)
-        </script>
- 
         <!--
+        <script language="JavaScript">
+        var output = "<h1>"
+        var diningHallClosed = 0;
+        var d = new Date();
+
+        if ((d.getHours() >= 19 && d.getMinutes() > 15) || d.getHours() >= 20) {
+            diningHallClosed = 1;
+        }
+
+        if (!diningHallClosed) {
+            output += "Dinner today"
+        } else {
+            output += "Today's Dinner is over. Dinner tomorrow"
+        }
+        output += ":"
+        output += "</h1>"
+        document.write(output)
+        </script>
+       
         <script language="JavaScript">
         getHumanDate();
         </script>)
         -->
-    <h2>
-         <script language="JavaScript">
-        printMeal("Dinner",diningHallClosed);
-        </script>
-
-    </h2>
-       
-<h2>New dinner menu not released yet - I will update this when it is.</h2>
-
-<!--
-
-        <h2>
-        Vegetables:
-        <br>
-        <script language="JavaScript">
-        printMeal("Vegetables",diningHallClosed);
-        </script>
-    </h2>
-        <h2>
-        Vegetarian option:
-        <br>
-        <script language="JavaScript">
-        printMeal("Vegetarian",diningHallClosed);
-        </script>
-    </h2>
-    </div>
-    <div id="tomorrowdinner">
-        <h3>
-
+        <div id="nomenu">
+            <h2>New dinner menu not released yet - I will update this when it is.</h2>
+        </div>
+        <div id="menu">
+            <h2>
+            <span class="dinnertoday"></span>
+        </h2>
+            <h2>
+            Vegetables:<br>
+            <span class="vegetablesToday"></span>
+        </h2>
+            <h2>
+            Vegetarian option:<br>
+            <span class="vegetarianToday"></span>
+        </h2>
+            <div id="tomorrowdinner">
+                <h3>
+<!-- 
         <script language="JavaScript">
             var output = "Dinner tomorrow"
 
@@ -110,37 +95,25 @@
             output += ":"
             document.write(output);
         </script>
-
-
+-->
+            <span class="dinnerTomorrow"></span>
+        </h3>
+                <h3>
+            Vegetables:<br>
+            <span class="vegetablesTomorrow"></span>
+        </h3>
+                <h3>
+            Vegetarian option:<br>
+            <span class="vegetarianTomorrow"></span>
+        </h3>
+            </div>
+        </div>
         <br>
-        <script language="JavaScript">
-        printMeal("Dinner",1 + diningHallClosed);
-        </script>
-    </h3>
-        <h3>
-        Vegetables:
-        <br>
-        <script language="JavaScript">
-        printMeal("Vegetables",1 + diningHallClosed);
-        </script>
-    </h3>
-        <h3>
-        Vegetarian option:
-        <br>
-        <script language="JavaScript">
-        printMeal("Vegetarian",1 + diningHallClosed);
-        </script>
-    </h3>
-    </div>
-
-    -->
-
-    <br>
-    <div id="footer">
-        <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
-        <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
-        </p>
-    </div>
+        <div id="footer">
+            <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
+            <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
+            </p>
+        </div>
 </body>
 
 </html>

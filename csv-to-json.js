@@ -105,7 +105,9 @@ function loop(callback) {
             if(csvWeek <= csvEndWeek) {
                 fileLoop(callback);   
             } else {
-                callback(menu);
+                callback({
+                    '2017': menu
+                });
             }
         });
     }

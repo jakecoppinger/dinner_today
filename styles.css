@@ -31,7 +31,12 @@ h3 {
 }
 
 
-
+/*
+ By Default, don't display missing data banner
+*/
+#nomenu {
+    display: none;
+}
 
 p {
     font-family: akzidenz-grotesk_pro_medium;
