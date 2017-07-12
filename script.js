@@ -8,6 +8,11 @@ if(!inBrowser) {
     require("./data.js");
 }
 
+
+function prettyJSON(o) {
+    return JSON.stringify(o, null, '\t');
+}
+
 // Returns the ISO week of the date.
 Date.prototype.getWeek = function() {
     var date = new Date(this.getTime());
@@ -118,8 +123,6 @@ function parseISOLocal(s) {
   return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
 }
 
-
-
 function mealsForDate(data,d) {
     if(!menuExistsForDate(data,d)) {
         return undefined;
@@ -132,74 +135,43 @@ function mealsForDate(data,d) {
         'Thursday',
         'Friday',
         'Saturday',
-          'Sunday'
+        'Sunday'
     ];
 
     var dayName = days[d.getDayMondayBased()];
-    console.log(d);
-    console.log(d.getDayMondayBased());
-    console.log("\n");
     return data[d.getFullYear()][d.getWeek()][dayName];
 }
 
-/////////////
+window.onload = function() {
+    // new Date(); 
+    var today = parseISOLocal('2017-07-24T19:40:00');
+    var tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
-//var d = new Date(); 
+    var app = new Vue({
+      el: '#app',
+      data: {
+        mealsTodayData:menuExistsForDate(data,today),
+        mealsTomorrowData: menuExistsForDate(data,tomorrow),
+        mealsToday: mealsForDate(data,today),
+        mealsTomorrow: mealsForDate(data,tomorrow),
+        noMenu: !menuExistsForDate(data,today) && !menuExistsForDate(data,today)
+      }
+    });
 
-var today = new Date(); //parseISOLocal('2017-07-24T19:40:00');
+    var mealsToday = mealsForDate(data,today);
+    var mealsTomorrow = mealsForDate(data,tomorrow);
 
-var tomorrow = new Date(today);
-tomorrow.setDate(tomorrow.getDate() + 1);
-
-
-var mealsToday = mealsForDate(data,today);
-var mealsTomorrow = mealsForDate(data,tomorrow);
-
-console.log(mealsTomorrow);
-
-if(inBrowser) {
-    window.onload = function() {
-
-        if(mealsToday) {
-            writeToClass(mealsToday.Dinner,"dinnerToday");
-            writeToClass(mealsToday.Vegetables, "vegetablesToday");
-            writeToClass(mealsToday.Vegetarian, "vegetarianToday");
-        } else {
-            document.getElementById('menu').style.display = 'none';
-            document.getElementById('nomenu').style.display = 'block';
-        }
-
-        if(mealsTomorrow) {
-            writeToClass(mealsTomorrow.Dinner,"dinnerTomorrow");
-            writeToClass(mealsTomorrow.Vegetables, "vegetablesTomorrow");
-            writeToClass(mealsTomorrow.Vegetarian, "vegetarianTomorrow");
-        } else {
-            document.getElementById('tomorrowdinner').style.display = 'none';
-        }
-
-    }
-} else {
-    // Not in browser
-
-   
     if(mealsToday) {
-        console.log("\nToday:");
-        console.log("Dinner: " + mealsToday.Dinner);
-        console.log("Vegetables: " + mealsToday.Vegetables);
-        console.log("Vegetarian: " + mealsToday.Vegetarian);
+        console.log(prettyJSON(mealsForDate(data,today)));
     } else {
         console.log("No menu today.");
     }
 
-
-   if(mealsTomorrow) {
-        console.log("\nTomorrow:");
-        console.log("Dinner: " + mealsTomorrow.Dinner);
-        console.log("Vegetables: " + mealsTomorrow.Vegetables);
-        console.log("Vegetarian: " + mealsTomorrow.Vegetarian);
+    if(mealsTomorrow) {
+        console.log(prettyJSON(mealsForDate(data,tomorrow)));
     } else {
         console.log("No menu tomorrow.");
     }
 
-
-}
+};

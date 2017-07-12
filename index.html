@@ -1,15 +1,16 @@
 <html>
-
 <head>
     <title>Dinner Today</title>
     <meta charset="UTF-8">
     <meta name="description" content="A simple webapp for your college that answers one question well: What's for dinner?">
     <meta name="author" content="Jake Coppinger">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="vue.js"></script>
     <script src="data.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
+
     <script type="text/javascript">
     window.heap = window.heap || [], heap.load = function(e, t) {
         window.heap.appid = e, window.heap.config = t = t || {};
@@ -43,54 +44,31 @@
 </head>
 
 <body>
-    <div id="todaydinner">
-
-        <div id="nomenu">
+    <div id="app"> 
+        <div id="nomenu" v-if="noMenu">
             <h2>New dinner menu not released yet - I will update this when it is.</h2>
         </div>
-        <div id="menu">
-        <h2>Dinner Today</h2>
-
-            <h2>
-            <span class="dinnertoday"></span>
-            </h2>
-
-            <h2>
-                Vegetables:<br>
-                <span class="vegetablesToday"></span>
-            </h2>
-            <h2>
-                Vegetarian option:<br>
-                <span class="vegetarianToday"></span>
-            </h2>
-
-
-
-            <div id="tomorrowdinner">
-             <h3>Dinner tomorrow</h3>
-                <h3>
-                    <span class="dinnerTomorrow"></span>
-                </h3>
-                    
-                <h3>
-                    Vegetables:<br>
-                    <span class="vegetablesTomorrow"></span>
-                </h3>
-                <h3>
-                    Vegetarian option:<br>
-                    <span class="vegetarianTomorrow"></span>
-                </h3>
+        <div id="menu" >
+            <div id="dinnertoday" v-if="mealsTodayData">
+                <h2>Dinner Today</h2>
+                <h2>{{mealsToday.Dinner}}</h2>
+                <h2>Vegetables:<br>{{mealsToday.Vegetables}}</h2>
+                <h2>Vegetarian option:<br>{{mealsToday.Vegetarian}}</h2>
             </div>
 
-
+            <div id="dinnertomorrow" v-if="mealsTomorrowData">
+                <h3>Dinner tomorrow</h3>
+                <h3>{{mealsTomorrow.Dinner}}</h3>
+                <h3>Vegetables:<br>{{mealsTomorrow.Vegetables}}</h3>
+                <h3>Vegetarian option:<br>{{mealsTomorrow.Vegetarian}}</h3>
+            </div>
         </div>
-
         <br>
         <div id="footer">
             <p>Any ideas/feedback/bugs? Drop me (Jake) a line! <a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a></p>
             <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
             </p>
         </div>
+    </div>
 </body>
-
 </html>

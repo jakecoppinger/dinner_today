@@ -7,7 +7,6 @@ p {
     */
     
     color:#333333;
-    
 }
 
 
@@ -30,13 +29,12 @@ h3 {
     font-size: 0.9em;
 }
 
-
 /*
  By Default, don't display missing data banner
 */
-#nomenu {
+/*#nomenu {
     display: none;
-}
+}*/
 
 p {
     font-family: akzidenz-grotesk_pro_medium;
@@ -50,16 +48,3 @@ body {
  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 */
 }
-
-/*
-Div containing todays dinner
-
-*/
-div#todaydinner {
-
-}
-
-div#tomorrowdinner {
-    
-}
-
