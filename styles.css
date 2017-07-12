@@ -130,17 +130,6 @@ a:hover {
         float:right;
     }
 
-    /*    
-    #footer {
-        width: 100%;
-        height: auto;
-        
-        background-color: red;
-        
-        clear:both;
-    }
-    */
-
     #app {
         max-width: 60em;
         margin-left: auto;
@@ -148,12 +137,9 @@ a:hover {
     }
 }
 
-
-
 @media only screen and (min-width:60em) {
     #app {
-        margin-top:5em;
+        margin-top: 2em;
+        margin-top:calc(17vh - 5em);
     }
-
-
 }
