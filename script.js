@@ -1,14 +1,3 @@
-inBrowser = true;
-
-if (typeof window === 'undefined') {
-    inBrowser = false;
-} 
-
-if(!inBrowser) {
-    require("./data.js");
-}
-
-
 function prettyJSON(o) {
     return JSON.stringify(o, null, '\t');
 }
@@ -25,51 +14,9 @@ Date.prototype.getWeek = function() {
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
 }
 
-// Returns the four-digit year corresponding to the ISO week of the date.
-Date.prototype.getWeekYear = function() {
-    var date = new Date(this.getTime());
-    date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-    return date.getFullYear();
-}
-
-// function getDinnerWeek() {
-//     var d = new Date(); // Get today's date and time
-//     //document.write(d.toLocaleString());  // Insert it into the document
-
-//     var weekOffset = -8;
-//     var yearWeek = d.getWeek();
-//     var hallWeek = yearWeek + weekOffset;
-//     return hallWeek
-// }
-
 function getDayOfWeek(date) {
     // Zero based!
     return (date.getDay() + 6) % 7;
-}
-
-function meal(portion, dayOffset) {
-    var d = new Date();
-
-    dayOfWeek = getDayOfWeek(d) + dayOffset;
-    week = getDinnerWeek(d) + Math.floor(dayOfWeek / 7)
-
-    // Account for midsem:
-    // if(week >= 8) {
-    //     week -= 1;
-    // }
-
-    dayData = dinner_data[week.toString()]
-
-    // console.log("dayOffset: " + dayOffset)
-    // console.log("day of week: " + dayOfWeek);
-    // console.log("week: " + getDinnerWeek(d) + Math.floor(dayOffset / 7));
-    // console.log("Math.floor(dayOffset / 7): " + Math.floor(dayOffset / 7));
-
-    return dayData[portion][dayOfWeek % 7]
-}
-
-function printMeal(portion, offset = 0) {
-    document.write(meal(portion, offset));
 }
 
 function getOrdinal(n) {
@@ -78,23 +25,17 @@ function getOrdinal(n) {
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
-
-function generateHumanDate() {
+// Generates string like "July 24th" from date object
+function generateHumanDate(d) {
     var monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
 
-    var d = new Date();
     var dayOfMonth = d.getDate()
-    return getOrdinal(dayOfMonth) + " of " + monthNames[d.getMonth()]
+    return monthNames[d.getMonth()] + " " + getOrdinal(dayOfMonth)
 }
 
-
-// Write str into DOM object with class className
-function writeToClass(str, className) {
-    document.querySelector('.' + className).innerHTML = str;
-}
-
+// Checks if data exists for specified date
 function menuExistsForDate(data, d) {
     if(d.getFullYear().toString() in data
         && d.getWeek().toString() in data[d.getFullYear()]) {
@@ -103,12 +44,7 @@ function menuExistsForDate(data, d) {
     return false; 
 }
 
-function prettyPrintDate(d) {
-    console.log("Date " + d + ":");
-    console.log("Day: " + d.getDayMondayBased());
-    console.log("Week number: " + d.getWeek()); 
-}
-
+// Get day of the date as an integer. Monday is 0, Sunday is 6
 Date.prototype.getDayMondayBased = function() {
     var d = new Date(this.getTime());
     var x = d.getDay() - 1;
@@ -118,11 +54,14 @@ Date.prototype.getDayMondayBased = function() {
     return x;
 }
 
+// Parse datestring in local timezone. String should be in ISO
+// format: '2017-07-24T19:40:00'
 function parseISOLocal(s) {
   var b = s.split(/\D/);
   return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
 }
 
+// Get meals for a specified date
 function mealsForDate(data,d) {
     if(!menuExistsForDate(data,d)) {
         return undefined;
@@ -144,13 +83,14 @@ function mealsForDate(data,d) {
 
 window.onload = function() {
     // new Date(); 
-    var today = parseISOLocal('2017-07-24T19:40:00');
+    var today = new Date(); //parseISOLocal('2017-07-24T19:40:00');
     var tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
     var app = new Vue({
       el: '#app',
       data: {
+        humanDate: generateHumanDate(today),
         mealsTodayData:menuExistsForDate(data,today),
         mealsTomorrowData: menuExistsForDate(data,tomorrow),
         mealsToday: mealsForDate(data,today),
@@ -173,5 +113,4 @@ window.onload = function() {
     } else {
         console.log("No menu tomorrow.");
     }
-
 };
