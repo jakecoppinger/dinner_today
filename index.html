@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Dinner Today</title>
     <meta charset="UTF-8">
@@ -10,7 +11,6 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
-
     <script type="text/javascript">
     window.heap = window.heap || [], heap.load = function(e, t) {
         window.heap.appid = e, window.heap.config = t = t || {};
@@ -44,22 +44,31 @@
 </head>
 
 <body>
-    <div id="app"> 
+    <div id="app">
         <div id="nomenu" v-if="noMenu">
             <h2>New dinner menu not released yet - I will update this when it is.</h2>
         </div>
-        <div id="menu" >
+        <div id="menu">
             <div id="dinnertoday" v-if="mealsTodayData">
                 <h2>Dinner Today / {{humanDate}}</h2>
                 <h2>{{mealsToday.Dinner}}</h2>
-                <h2>Vegetables:<br>{{mealsToday.Vegetables}}</h2>
+                <h2>Vegetables:</h2>
+                <ul>
+                    <li v-for="vegetable in mealsToday.Vegetables">
+                        {{ vegetable }}
+                    </li>
+                </ul>
                 <h2>Vegetarian option:<br>{{mealsToday.Vegetarian}}</h2>
             </div>
-
             <div id="dinnertomorrow" v-if="mealsTomorrowData">
                 <h3>Dinner tomorrow</h3>
                 <h3>{{mealsTomorrow.Dinner}}</h3>
-                <h3>Vegetables:<br>{{mealsTomorrow.Vegetables}}</h3>
+                <h3>Vegetables:</h3>
+                <ul>
+                    <li v-for="vegetable in mealsTomorrow.Vegetables">
+                        {{ vegetable }}
+                    </li>
+                </ul>
                 <h3>Vegetarian option:<br>{{mealsTomorrow.Vegetarian}}</h3>
             </div>
         </div>
@@ -71,4 +80,5 @@
         </div>
     </div>
 </body>
+
 </html>
