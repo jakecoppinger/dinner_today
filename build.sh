@@ -9,20 +9,19 @@ mkdir dist/
 mkdir dist/js
 mkdir dist/css
 
-cp index.html dist/
-cp robots.txt dist/
-cp CNAME dist/
+cp src/index.html dist/
+cp src/robots.txt dist/
+cp src/CNAME dist/
 
-cp -r data/ dist/
-cp -r css/* dist/css/
+cp -r src/data dist/
+cp -r src/css/* dist/css/
+cp -r src/fonts dist/
 
 echo "Running browserify..."
-browserify js/view.js -o dist/js/bundle.js
+browserify src/js/view.js -o dist/js/bundle.js
 
-cp js/vue.min.js dist/js
-
+cp src/js/vue.min.js dist/js
 
 echo "Done!"
-
 
 

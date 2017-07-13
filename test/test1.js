@@ -1,5 +1,5 @@
-require("../data/data.js");
-var app = require("../js/app.js");
+require("../src/data/data.js");
+var app = require("../src/js/app.js");
 var moment = require('moment');
 var assert = require('assert');
 
