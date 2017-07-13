@@ -11,7 +11,7 @@ window.onload = function() {
     var tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    var dino = new app.Dino(data);
+    var dino = new app.DiningHall(data);
 
     var vueapp = new Vue({
       el: '#app',

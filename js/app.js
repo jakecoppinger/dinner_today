@@ -3,12 +3,12 @@
 // }
 
 // Constructor
-function Dino(data) {
+function DiningHall(data) {
   this.data = data;
 }
 
 // Get meals for a specified date
-Dino.prototype.mealsOnDate = function(d) {
+DiningHall.prototype.mealsOnDate = function(d) {
     if(!this.menuExistsOnDate(d)) {
         return undefined;
     }
@@ -28,7 +28,7 @@ Dino.prototype.mealsOnDate = function(d) {
 }
 
 // Checks if data exists for specified date
-Dino.prototype.menuExistsOnDate = function(d) {
+DiningHall.prototype.menuExistsOnDate = function(d) {
     if(d.getFullYear().toString() in this.data
         && d.getWeek().toString() in this.data[d.getFullYear()]) {
         return true;
@@ -88,7 +88,7 @@ var parseISOLocal = function(s) {
   return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
 }
 
-module.exports.Dino = Dino;
+module.exports.DiningHall = DiningHall;
 
 exports.generateHumanDate = generateHumanDate;
 // exports.menuExistsForDate = menuExistsForDate;
