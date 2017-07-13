@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
@@ -5,5 +6,15 @@ module.exports = {
     output: {
         path: path.resolve( './dist/js'),
         filename: 'app.bundle.js'
-    }
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+            },
+            output: {
+                comments: false,
+            },
+        }),
+    ]
 };
