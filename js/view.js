@@ -11,15 +11,17 @@ window.onload = function() {
     var tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
+    var dino = new app.Dino(data);
+
     var vueapp = new Vue({
       el: '#app',
       data: {
         humanDate: app.generateHumanDate(today),
-        mealsTodayData:app.menuExistsForDate(data,today),
-        mealsTomorrowData: app.menuExistsForDate(data,tomorrow),
-        mealsToday: app.mealsForDate(data,today),
-        mealsTomorrow: app.mealsForDate(data,tomorrow),
-        noMenu: !app.menuExistsForDate(data,today) && !app.menuExistsForDate(data,today)
+        mealsTodayData:dino.menuExistsOnDate(today),
+        mealsTomorrowData: dino.menuExistsOnDate(tomorrow),
+        mealsToday: dino.mealsOnDate(today),
+        mealsTomorrow: dino.mealsOnDate(tomorrow),
+        noMenu: !dino.menuExistsOnDate(today) && !dino.menuExistsOnDate(today)
       }
     });
 
