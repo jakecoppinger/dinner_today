@@ -8,29 +8,24 @@ function DiningHall(data) {
 }
 
 // Get meals for a specified date
-DiningHall.prototype.mealsOnDate = function(d) {
-    if(!this.menuExistsOnDate(d)) {
+DiningHall.prototype.mealsOnDate = function(m) {
+    if(!this.menuExistsOnDate(m)) {
         return undefined;
     }
 
-    const days = [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-    ];
-
-    var dayName = days[d.getDayMondayBased()];
-    return data[d.getFullYear()][d.getWeek()][dayName];
+    var day= m.format("dddd");
+    var week = m.isoWeek(); //m.format("w");
+    var year = m.format("YYYY")
+    return data[year][week][day];
 }
 
 // Checks if data exists for specified date
-DiningHall.prototype.menuExistsOnDate = function(d) {
-    if(d.getFullYear().toString() in this.data
-        && d.getWeek().toString() in this.data[d.getFullYear()]) {
+DiningHall.prototype.menuExistsOnDate = function(m) {
+    var year = m.format("YYYY")
+    var week = m.isoWeek(); //m.format("w");
+
+    if(year in this.data
+        && week in this.data[year]) {
         return true;
     }
     return false; 
@@ -53,24 +48,6 @@ var getDayOfWeek = function(date) {
     return (date.getDay() + 6) % 7;
 }
 
-var getOrdinal = function(n) {
-    var s = ["th", "st", "nd", "rd"],
-        v = n % 100;
-    return n + (s[(v - 20) % 10] || s[v] || s[0]);
-}
-
-// Generates string like "July 24th" from date object
-var generateHumanDate = function(d) {
-    var monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    var dayOfMonth = d.getDate()
-    return monthNames[d.getMonth()] + " " + getOrdinal(dayOfMonth)
-}
-
-
-
 // Get day of the date as an integer. Monday is 0, Sunday is 6
 Date.prototype.getDayMondayBased = function() {
     var d = new Date(this.getTime());
@@ -90,7 +67,7 @@ var parseISOLocal = function(s) {
 
 module.exports.DiningHall = DiningHall;
 
-exports.generateHumanDate = generateHumanDate;
+// exports.generateHumanDate = generateHumanDate;
 // exports.menuExistsForDate = menuExistsForDate;
 // exports.mealsForDate = mealsForDate;
 exports.parseISOLocal = parseISOLocal;

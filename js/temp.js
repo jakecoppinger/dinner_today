@@ -1,8 +1,15 @@
-require("../data/data.js");
-var app = require("../js/app.js");
+var moment = require('moment');
+moment().format();
 
-var today = app.parseISOLocal('2017-07-24T19:40:00');
+var temp = moment("2017-02-08 09:30:26")
 
-var mealsToday = app.mealsForDate(data,today);
 
-console.log(mealsToday.Vegetarian == 'Polenta & Vegetable Stacks With Marinated Tofu');
+
+var humanDate = function(m) {
+    return m.format("MMMM") + " " + m.format("Do");
+}
+
+
+console.log(temp.format());
+
+console.log(humanDate(temp));
