@@ -5,11 +5,25 @@ var assert = require('assert');
 
 describe('DiningHall', function() {
     describe('mealsOnDate()', function() {
-        it('has a vegetarian meal on 07-24', function() {
+        it('has correct vegetarian meal on 07-24', function() {
             var dino = new app.DiningHall(data);
             var meals = dino.mealsOnDate(moment("2017-07-24 09:30"));
             assert.equal(meals.Vegetarian, 
                 'Polenta & Vegetable Stacks With Marinated Tofu');
+        });
+
+        it('has correct meal on 18th August', function() {
+            var dino = new app.DiningHall(data);
+            var meals = dino.mealsOnDate(moment("2017-08-18 09:30"));
+            assert.equal(meals.Dinner, 
+                "Braised Chicken in Mushroom Sauce");
+        });
+
+        it('has correct meal on 6th September', function() {
+            var dino = new app.DiningHall(data);
+            var meals = dino.mealsOnDate(moment("2017-09-06 09:30"));
+            assert.equal(meals.Dinner, 
+                "Pizza & Pasta Night");
         });
     });
 
