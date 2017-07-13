@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export PATH="$PWD/node_modules/.bin:$PATH"
+
 npm install
 npm test
 
@@ -18,8 +20,11 @@ cp -r src/data dist/
 cp -r src/css/* dist/css/
 cp -r src/fonts dist/
 
-echo "Running browserify..."
-browserify src/js/view.js -o dist/js/bundle.js
+#echo "Running browserify..."
+#browserify src/js/view.js -o dist/js/bundle.js
+
+echo "Running webpack..."
+webpack src/js/view.js dist/js/bundle.js
 
 cp src/js/vue.min.js dist/js
 
