@@ -6,6 +6,9 @@ Dinner Today
 Implemented for a college at an Australian university. I have not included the name as the webapp is unoffical.
 
 # Development
+
+Install browserify: `npm install -g browserify`
+
 After you clone the source it's very easy to test out - the webapp is a simple static `index.html` page. Simply open this file in your browser for development.
 
 [Vue.js](https://vuejs.org/) is used as a front end templating engine, greatly simplifying binding the data to the DOM. The JavaScript code for starting Vue.js is in `js/app.js`. CSS styles are in `css/styles.css`. I have disallowed Robots (search engines) from indexing the site as it is not an offical univerity website.

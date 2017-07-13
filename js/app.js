@@ -1,4 +1,4 @@
-function prettyJSON(o) {
+var prettyJSON = function(o) {
     return JSON.stringify(o, null, '\t');
 }
 
@@ -14,19 +14,19 @@ Date.prototype.getWeek = function() {
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
 }
 
-function getDayOfWeek(date) {
+var getDayOfWeek = function(date) {
     // Zero based!
     return (date.getDay() + 6) % 7;
 }
 
-function getOrdinal(n) {
+var getOrdinal = function(n) {
     var s = ["th", "st", "nd", "rd"],
         v = n % 100;
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
 // Generates string like "July 24th" from date object
-function generateHumanDate(d) {
+var generateHumanDate = function(d) {
     var monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
@@ -36,7 +36,7 @@ function generateHumanDate(d) {
 }
 
 // Checks if data exists for specified date
-function menuExistsForDate(data, d) {
+var menuExistsForDate = function(data, d) {
     if(d.getFullYear().toString() in data
         && d.getWeek().toString() in data[d.getFullYear()]) {
         return true;
@@ -56,13 +56,13 @@ Date.prototype.getDayMondayBased = function() {
 
 // Parse datestring in local timezone. String should be in ISO
 // format: '2017-07-24T19:40:00'
-function parseISOLocal(s) {
+var parseISOLocal = function(s) {
   var b = s.split(/\D/);
   return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
 }
 
 // Get meals for a specified date
-function mealsForDate(data,d) {
+var mealsForDate = function(data,d) {
     if(!menuExistsForDate(data,d)) {
         return undefined;
     }
@@ -80,3 +80,13 @@ function mealsForDate(data,d) {
     var dayName = days[d.getDayMondayBased()];
     return data[d.getFullYear()][d.getWeek()][dayName];
 }
+
+
+exports.prettyJSON = prettyJSON;
+exports.getDayOfWeek = getDayOfWeek;
+exports.getOrdinal = getOrdinal;
+exports.generateHumanDate = generateHumanDate;
+exports.menuExistsForDate = menuExistsForDate;
+exports.parseISOLocal = parseISOLocal;
+exports.mealsForDate = mealsForDate;
+
