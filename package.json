@@ -1,7 +1,7 @@
 {
   "name": "dinner_today",
   "version": "1.0.0",
-  "description": "Dinner Today ============",
+  "description": "A simple webapp for your college that answers one question well: What's for dinner?",
   "main": "csv-to-json.js",
   "dependencies": {},
   "devDependencies": {
@@ -13,7 +13,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "build": "webpack"
+    "build": "./build.sh",
+    "deploy":"bash deploy.sh"
   },
   "repository": {
     "type": "git",
