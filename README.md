@@ -13,6 +13,12 @@ After you clone the source it's very easy to test out - the webapp is a simple s
 ## Input Data
 I scraped the menu from a Powerpoint document and stored this raw data in CSV files in `raw_data/`. I wrote a Node program to read these csv files and output beautiful JSON.
 
+To install the NPM dependencies:
+
+```
+npm install
+```
+
 To run the node script:
 
 ```
