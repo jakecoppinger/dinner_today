@@ -1,7 +1,6 @@
-require("../data/data.js");
-var app = require("./app.js");
+var data = require("../data/data.json");
+var DiningHall = require("./DiningHall.js");
 var moment = require('moment');
-
 
 var getOrdinal = function(n) {
     var s = ["th", "st", "nd", "rd"],
@@ -25,14 +24,10 @@ var humanDate = function(m) {
 
 
 window.onload = function() {
-    // new Date(); 
+    //var today = moment("2017-07-24 09:30");
     var today = moment();
     var tomorrow = today.add(1, 'days');
-    // var todayOld = new Date(); //parseISOLocal('2017-07-24T19:40:00');
-    // var tomorrowOld = new Date(today);
-    // tomorrowOld.setDate(tomorrowOld.getDate() + 1);
-
-    var dino = new app.DiningHall(data);
+    var dino = new DiningHall(data);
 
     var vueapp = new Vue({
       el: '#app',
