@@ -1,6 +1,6 @@
-var prettyJSON = function(o) {
-    return JSON.stringify(o, null, '\t');
-}
+// var prettyJSON = function(o) {
+//     return JSON.stringify(o, null, '\t');
+// }
 
 // Returns the ISO week of the date.
 Date.prototype.getWeek = function() {
@@ -81,12 +81,14 @@ var mealsForDate = function(data,d) {
     return data[d.getFullYear()][d.getWeek()][dayName];
 }
 
-
-exports.prettyJSON = prettyJSON;
-exports.getDayOfWeek = getDayOfWeek;
-exports.getOrdinal = getOrdinal;
 exports.generateHumanDate = generateHumanDate;
 exports.menuExistsForDate = menuExistsForDate;
-exports.parseISOLocal = parseISOLocal;
 exports.mealsForDate = mealsForDate;
+exports.parseISOLocal = parseISOLocal;
+
+// exports.prettyJSON = prettyJSON;
+// exports.getDayOfWeek = getDayOfWeek;
+// exports.getOrdinal = getOrdinal;
+
+
 
