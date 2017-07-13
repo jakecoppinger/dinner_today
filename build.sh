@@ -3,7 +3,7 @@ set -e
 
 export PATH="$PWD/node_modules/.bin:$PATH"
 
-npm install
+#npm install
 npm test
 
 rm -rf dist/
