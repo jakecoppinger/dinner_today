@@ -14,7 +14,7 @@
   "scripts": {
     "test": "mocha",
     "build": "./build.sh",
-    "deploy":"bash deploy.sh"
+    "deploy": "bash deploy.sh"
   },
   "repository": {
     "type": "git",

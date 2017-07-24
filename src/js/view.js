@@ -9,7 +9,9 @@ var humanDate = function(m) {
 var main = function() {
     //var today = moment("2017-07-24 09:30");
     var today = moment();
-    var tomorrow = today.add(1, 'days');
+
+
+    var tomorrow = moment().add(1, 'days');
     var dino = new DiningHall(data);
 
     var vueapp = new Vue({
