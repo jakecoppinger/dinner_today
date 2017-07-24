@@ -51,7 +51,12 @@
         </div>
         <div id="right-side-container">
             <div id="menu">
-                <div id="dinnertoday" v-if="mealsTodayData">
+
+                <div v-if="dinnerFinished">
+                    <h3>Dinner finished for today.</h3>
+                </div>
+
+                <div id="dinnertoday" v-if="mealsTodayData && !dinnerFinished">
                     <h3>{{mealsToday.Dinner}}</h3>
                     <h2>vegetarian</h2>
                     <h3>{{mealsToday.Vegetarian}}</h3>
