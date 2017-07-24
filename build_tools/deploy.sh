@@ -3,9 +3,6 @@ set -e
 
 id="[dinnertoday.info deploy]"
 
-echo $id "Building..."
-./build.sh
-
 echo $id "Removing previous deploy build..."
 rm -rf ../dinnertoday.info-builds/*
 

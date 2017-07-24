@@ -2,6 +2,11 @@ var data = require("../data/data.json");
 var DiningHall = require("./DiningHall.js");
 var moment = require('moment');
 
+
+import Vue from 'vue'
+const compiler = require('vue-template-compiler');
+
+
 var humanDate = function(m) {
     return m.format("MMMM") + " " + m.format("Do");
 }

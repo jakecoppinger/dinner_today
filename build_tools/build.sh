@@ -22,12 +22,3 @@ cp -r src/fonts dist/
 
 #echo "Running browserify..."
 #browserify src/js/view.js -o dist/js/bundle.js
-
-echo "Running webpack..."
-webpack
-
-cp src/js/vue.min.js dist/js
-
-echo "Done!"
-
-

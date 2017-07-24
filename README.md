@@ -34,11 +34,16 @@ brew install node
 
 If you have any problems with the use of npm (*never* use sudo for npm) consult [this](https://gist.github.com/rcugut/c7abd2a425bb65da3c61d8341cd4b02d) guide.
 
-### Install dependencies
-This could take a while.
+### Install dependencies with Yarn
+
+Make sure you have yarn installed.
 
 ```
-npm install
+npm install -g yarn
+```
+
+```
+yarn install
 ```
 
 ### Testing

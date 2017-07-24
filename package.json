@@ -6,15 +6,22 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.1.0",
+    "copy-webpack-plugin": "^4.0.1",
     "csv-parse": "^1.2.0",
+    "jshint-stylish": "^2.2.1",
     "mocha": "^3.4.2",
     "moment": "^2.18.1",
+    "vue": "^2.4.2",
+    "vue-template-compiler": "^2.4.2",
     "webpack": "^3.2.0"
   },
   "scripts": {
     "test": "mocha",
-    "build": "./build.sh",
-    "deploy": "bash deploy.sh"
+    "dev": "./build_tools/build.sh && webpack",
+    "build": "./build_tools/build.sh && webpack -p",
+    "deploy": "npm run build && ./build_tools/deploy.sh",
+    "clean": "rm -rf dist/",
+    "lint": "jshint --reporter=node_modules/jshint-stylish src/js/*"
   },
   "repository": {
     "type": "git",
