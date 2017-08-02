@@ -1,4 +1,4 @@
-Dinner Today
+[DinnerToday.info](https://www.dinnertoday.info)
 ============
 
 [![devDependencies Status](https://david-dm.org/jakecoppinger/dinnertoday.info/dev-status.svg)](https://david-dm.org/jakecoppinger/dinnertoday.info?type=dev)
@@ -91,7 +91,30 @@ To save this data to the correct file:
 ## Hosting notes & analytics
 The site is hosted on [Github Pages](https://pages.github.com/), using CloudFlare's CDN to improve ping and add HTTPS support. [Heap Analytics](https://heapanalytics.com/) is used for anonymous usage analytics. 
 
+
 # Author
 Jake Coppinger  
 [jakecoppinger.com](http://www.jakecoppinger.com)  
 [jake@jakecoppinger.com](mailto:jake@jakecoppinger.com)
+
+
+
+# License
+
+**tl;dr:** The GNU GPLv3 is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms, and also provides an express grant of patent rights from contributors to users.
+
+DinnerToday.info: A simple webapp that states the meal for your college
+Copyright (C) 2017 Jake Coppinger
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
