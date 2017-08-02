@@ -103,8 +103,8 @@ Jake Coppinger
 
 **tl;dr:** The GNU GPLv3 is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms, and also provides an express grant of patent rights from contributors to users.
 
-DinnerToday.info: A simple webapp that states the meal for your college
-Copyright (C) 2017 Jake Coppinger
+DinnerToday.info: A simple webapp that states the meal for your college  
+Copyright (C) 2017 Jake Coppinger  
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
