@@ -21,7 +21,7 @@ h1 {
 
 #header h1#date   {
     color:#A5A5A5;
-    margin-top: 0em;
+    margin-top: 0.1em;
     margin-bottom: 0.2em;
 }
 
@@ -46,7 +46,7 @@ h2 {
 Actual meal
 */
 h3 {
-    font-family: akzidenz-grotesk_pro_medium;
+    font-family: akzidenz-grotesk_pro_light;
     /*font-family: akzidenz-grotesk_pro_light;*/
     color:black;
     margin-top: 0em;
