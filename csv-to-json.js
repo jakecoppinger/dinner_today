@@ -1,5 +1,5 @@
 var parse = require('csv-parse');
-require('should');
+// require('should');
 var fs = require('fs')
 // output.should.eql([ [ '1', '2', '3', '4' ], [ 'a', 'b', 'c', 'd' ] ]);
 
@@ -86,9 +86,9 @@ function processWeekCSV(data, callback) {
 }
 
 function loop(callback) {
-    const startingWeek = 30;
-    const csvStartWeek = 1;
-    const csvEndWeek = 8;
+    const startingWeek = 41;
+    const csvStartWeek = 12;
+    const csvEndWeek = 16;
 
     var menu = {};
 
