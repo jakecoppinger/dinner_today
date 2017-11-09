@@ -15,11 +15,13 @@
   },
   "scripts": {
     "test": "mocha",
-    "dev": "./build_tools/build.sh",
-    "build": "./build_tools/build.sh",
-    "deploy": "npm run build && ./build_tools/deploy.sh",
+    "dev": "python main.py",
+    "build": "./tools/build.sh",
+    "freeze":"rm -rf build && python freeze.py",
+    "deploy": "npm run build && ./tools/deploy.sh",
     "clean": "rm -rf dist/",
-    "lint": "jshint --reporter=node_modules/jshint-stylish src/js/*"
+    "lint": "jshint --reporter=node_modules/jshint-stylish src/js/*",
+    "serve:prod": "pushd build && python -m SimpleHTTPServer; popd"
   },
   "browser": {
     "vue": "vue/dist/vue.common.js"

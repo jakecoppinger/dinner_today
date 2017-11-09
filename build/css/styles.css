@@ -1,0 +1,145 @@
+h1,h2,h3 {
+    font-size: 1.5em;
+}
+
+body {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top:0.8em;
+}
+
+h1 {
+    font-family: akzidenz-grotesk_pro_medium;
+    line-height: 0.9;
+}
+
+#header h1#title   {
+    color:#E55000; /*#FF6A29;*/
+    margin-top:0.4em;
+    margin-bottom: 0.0em;
+}
+
+#header h1#date   {
+    color:#A5A5A5;
+    margin-top: 0.1em;
+    margin-bottom: 0.2em;
+}
+
+#dinnertomorrow h1 {
+    color:#009993;
+    margin-bottom: 0em;
+}
+
+/*
+Meal title (eg. vegetarian)
+*/
+h2 {
+    font-family: akzidenz-grotesk_pro_medium;
+    /*font-family: akzidenz-grotesk_pro_light;*/
+    color:#A5A5A5;
+
+    margin-top: 0em;
+    margin-bottom:0em;
+}
+
+/*
+Actual meal
+*/
+h3 {
+    font-family: akzidenz-grotesk_pro_light;
+    /*font-family: akzidenz-grotesk_pro_light;*/
+    color:black;
+    margin-top: 0em;
+    margin-bottom:0.3em;
+}
+
+ul {
+    list-style:none;
+    padding-left:0;
+
+    margin-top: 0em;
+    margin-bottom:0.5em;
+}
+
+ul {
+    list-style: none;
+}
+ 
+ul li:before {
+    color: #AAAAAA;
+    content: '» ';
+    font-weight: bold;
+}
+
+
+#footer {
+    max-width: 30em;
+}
+
+p {
+    font-family: akzidenz-grotesk_pro_medium;
+    font-size: 0.9em;
+    color:#a3a3a3;
+}
+
+/* Hide elements until vue renders */
+[v-cloak] {
+  display: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: solid 1px #a3a3a3;
+    transition: color 250ms linear;
+   
+}
+
+a:hover {
+    transition: color 50ms linear;
+    color: #009993;
+    border-bottom: solid 1px #009993;
+}
+
+
+
+@media only screen and (min-width:40em) {
+    body {
+        /*
+        background-color: lightblue;
+        */
+    }
+    #header {
+        width: 30%;
+        height: auto;
+        /*
+        background-color:green;
+        */
+        float:left;
+    }
+    
+    #right-side-container {
+        margin-top: 0.4em;
+
+
+        width: 60%;
+        height: auto;
+        /*
+        background-color: blue;
+        */
+        float:right;
+    }
+
+    #app {
+        max-width: 60em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width:60em) {
+    #app {
+        margin-top: 2em;
+        margin-top:calc(17vh - 5em);
+    }
+}
