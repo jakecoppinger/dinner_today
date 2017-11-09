@@ -1,6 +1,4 @@
 {% extends "base.html" %} {% block body %}
-
-{% raw %}
     <div id="menu">
 
         <div v-if="dinnerFinished">
@@ -8,6 +6,7 @@
         </div>
 
         <div id="dinnertoday" v-if="mealsTodayData && !dinnerFinished">
+            {% raw %}
             <h3>{{mealsToday.Dinner}}</h3>
             <h2>vegetarian</h2>
             <h3>{{mealsToday.Vegetarian}}</h3>
@@ -18,9 +17,11 @@
                     {{ vegetable }}
                 </li>
             </ul>
+            {% endraw %}
             </h3>
         </div>
         <div id="dinnertomorrow" v-if="mealsTomorrowData">
+            {% raw %}
             <h1>tomorrow</h1>
             <h3>{{mealsTomorrow.Dinner}}</h3>
             <h2>vegetarian:</h2>
@@ -31,12 +32,13 @@
                     {{ vegetable }}
                 </li>
             </ul>
+            {% endraw %}
             </h3>
         </div>
     </div>
     <div id="nomenu" v-if="noMenu">
         <h2>New dinner menu starts on July 24. (week1, sem 2)</h2>
     </div>
-<h2><a href="/feedback">Leave feedback!</a></h2>
-{% endraw %}
+<h2><a href="{{url_for('feedback')}}">Leave feedback!</a></h2>
+
 {% endblock %}
