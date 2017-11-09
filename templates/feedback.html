@@ -1,3 +1,49 @@
 {% extends "base.html" %} {% block body %}
 <h1>Feedback</h1>
+
+<!-- 
+    https://script.google.com/macros/u/1/s/AKfycbx6jc5jiJXbubMY0Zfi8PKkopNrSmAjUX3FBTl4RYI5914WaWv0/exec
+-->
+{# <form id="test-form">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse">
+  <br><br>
+  <input type="submit" id="#submit-form" value="Submit">
+</form> 
+ #}
+
+<form id="test-form">
+  
+  <div>
+    <label>zid</label>
+    <input type="text" name="zid" placeholder="zid"/>
+  </div>
+
+  <div>
+    <label>Rating</label>
+    <input type="text" name="rating" placeholder="rating"/>
+  </div>
+
+  <div>
+    <label>Comment</label>
+    <input type="text" name="comment" placeholder="comment"/>
+  </div>
+
+  <div>
+    <label>Correct Meal</label>
+    <input type="text" name="correct_meal" placeholder="correct_meal"/>
+  </div>
+ 
+  <div>
+    <button type="submit" id="submit-form">Submit</button>
+  </div>
+
+</form>
+
+
+
+
 {% endblock %}
