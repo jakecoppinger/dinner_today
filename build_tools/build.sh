@@ -12,7 +12,7 @@ mkdir dist/
 mkdir dist/js
 mkdir dist/css
 
-cp src/index.html dist/
+cp src/*.html dist/
 cp src/robots.txt dist/
 cp src/CNAME dist/
 
