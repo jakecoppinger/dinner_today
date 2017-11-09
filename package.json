@@ -4,16 +4,14 @@
   "description": "A simple webapp for your college that answers one question well: What's for dinner?",
   "main": "csv-to-json.js",
   "dependencies": {
-    "browserify": "^14.5.0"
-  },
-  "devDependencies": {
+    "browserify": "^14.5.0",
     "chai": "^4.1.0",
     "csv-parse": "^1.2.0",
     "jshint-stylish": "^2.2.1",
     "mocha": "^3.4.2",
     "moment": "^2.18.1",
     "vue": "^2.4.2",
-    "vue-template-compiler": "^2.4.2"
+    "vue-template-compiler": "^2.5.3"
   },
   "scripts": {
     "test": "mocha",
@@ -35,5 +33,5 @@
   "bugs": {
     "url": "https://github.com/jakecoppinger/dinner_today/issues"
   },
-  "homepage": "https://github.com/jakecoppinger/dinner_today#readme"
+  "homepage": "https://github.com/jakecoppinger/dinner_today"
 }

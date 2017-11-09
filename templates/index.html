@@ -1,3 +1,42 @@
 {% extends "base.html" %} {% block body %}
-<h1>Hello world</h1>
+
+{% raw %}
+    <div id="menu">
+
+        <div v-if="dinnerFinished">
+            <h3>Dinner finished for today.</h3>
+        </div>
+
+        <div id="dinnertoday" v-if="mealsTodayData && !dinnerFinished">
+            <h3>{{mealsToday.Dinner}}</h3>
+            <h2>vegetarian</h2>
+            <h3>{{mealsToday.Vegetarian}}</h3>
+            <h2>vegetables</h2>
+            <h3>
+            <ul>
+                <li v-for="vegetable in mealsToday.Vegetables">
+                    {{ vegetable }}
+                </li>
+            </ul>
+            </h3>
+        </div>
+        <div id="dinnertomorrow" v-if="mealsTomorrowData">
+            <h1>tomorrow</h1>
+            <h3>{{mealsTomorrow.Dinner}}</h3>
+            <h2>vegetarian:</h2>
+            <h3>{{mealsTomorrow.Vegetarian}}</h3>
+            <h2>vegetables</h2>
+            <h3><ul>
+                <li v-for="vegetable in mealsTomorrow.Vegetables">
+                    {{ vegetable }}
+                </li>
+            </ul>
+            </h3>
+        </div>
+    </div>
+    <div id="nomenu" v-if="noMenu">
+        <h2>New dinner menu starts on July 24. (week1, sem 2)</h2>
+    </div>
+<h2><a href="/feedback">Leave feedback!</a></h2>
+{% endraw %}
 {% endblock %}
