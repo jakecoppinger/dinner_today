@@ -2,3 +2,5 @@
 node_modules/
 dist/
 *.swp
+
+src/js/bundle.js

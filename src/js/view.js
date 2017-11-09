@@ -3,7 +3,7 @@ var DiningHall = require("./DiningHall.js");
 var moment = require('moment');
 
 
-import Vue from 'vue'
+const Vue = require('vue');
 const compiler = require('vue-template-compiler');
 
 
