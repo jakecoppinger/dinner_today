@@ -39,6 +39,43 @@
     <div id="nomenu" v-if="noMenu">
         <h2>New dinner menu starts on July 24. (week1, sem 2)</h2>
     </div>
-<h2><a href="{{url_for('feedback')}}">Leave feedback!</a></h2>
+{% endblock %}
+
+{% block feedback %}
+
+<form id="test-form">
+    <p><i>This feedback is going direct to Isabelle so make it count!</i></p>
+
+    <p><b>How was dinner today?</b>
+        <br>5 = excited to get to the dino
+        <br>1 = prefer making a toastie (or takeaway)
+        <br>(even if you don't have a strong opinion let Isabelle know)
+    </p>
+    <input type="radio" name="rating" value="1" required>1
+    <input type="radio" name="rating" value="2">2
+    <input type="radio" name="rating" value="3">3
+    <input type="radio" name="rating" value="4">4
+    <input type="radio" name="rating" value="5">5
+    <br>
+    <br>
+    <input type="checkbox" name="vegetarian" value="1">Tick if vegetarian meal
+    <br>
+
+    <input type="checkbox" name="incorrect_meal" value="1">Tick if meal different to menu
+    <br>
+    <br>
+    <br>
+    <label></label>
+    <textarea name="comment" rows="3" cols="47" placeholder="[Optional] Have a comment? Looking for genuine and constructive feedback! 140 characters max."></textarea>
+    <br>
+    <br>
+    <p>[Required] Lastly, zID please.<br>(you shouldn't have to type this next time)</p>
+    <input type="text" name="zid" placeholder="z1234567" pattern="z[0-9]{7}" title="valid zID: z followed by 7 digits" required/>
+
+    <br>
+    <br>
+    <button type="submit" id="submit-form">Send it!</button>
+</form>
+
 
 {% endblock %}

@@ -72,14 +72,27 @@ ul li:before {
 }
 
 
+/*
+Containers
+*/
+
+#left-bottom-container {
+    padding-top:0px;
+}
+
+
 #footer {
     max-width: 30em;
 }
 
-p {
+p, form {
     font-family: akzidenz-grotesk_pro_medium;
     font-size: 0.9em;
     color:#a3a3a3;
+}
+
+textarea {
+    resize:none;
 }
 
 /* Hide elements until vue renders */
@@ -118,7 +131,7 @@ a:hover {
         float:left;
     }
     
-    #right-side-container {
+    #right-side-container, #footer-container {
         margin-top: 0.4em;
 
 
@@ -128,6 +141,10 @@ a:hover {
         background-color: blue;
         */
         float:right;
+    }
+
+    #left-bottom-container {
+        padding-top:80px;
     }
 
     #app {

@@ -1,49 +1,38 @@
 {% extends "base.html" %} {% block body %}
 <h1>Feedback</h1>
-
 <!-- 
     https://script.google.com/macros/u/1/s/AKfycbx6jc5jiJXbubMY0Zfi8PKkopNrSmAjUX3FBTl4RYI5914WaWv0/exec
 -->
-{# <form id="test-form">
-  First name:<br>
-  <input type="text" name="firstname" value="Mickey">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
-  <br><br>
-  <input type="submit" id="#submit-form" value="Submit">
-</form> 
- #}
-
 <form id="test-form">
-  
-  <div>
-    <label>zid</label>
-    <input type="text" name="zid" placeholder="zid"/>
-  </div>
+    <p><i>This data is going direct to Isabelle so make it count!</i></p>
 
-  <div>
-    <label>Rating</label>
-    <input type="text" name="rating" placeholder="rating"/>
-  </div>
+    <p>How was dinner?
+        <br>5 = excited to get back down to dinner
+        <br>1 = prefer making a toastie or spending money on takeaway
+    </p>
+    <input type="radio" name="rating" value="1">1
+    <input type="radio" name="rating" value="2">2
+    <input type="radio" name="rating" value="3">3
+    <input type="radio" name="rating" value="4">4
+    <input type="radio" name="rating" value="5">5
+    <br>
+    <br>
+    <input type="checkbox" name="vegetarian" value="1">Tick if vegetarian meal
+    <br>
 
-  <div>
-    <label>Comment</label>
-    <input type="text" name="comment" placeholder="comment"/>
-  </div>
-
-  <div>
-    <label>Correct Meal</label>
-    <input type="text" name="correct_meal" placeholder="correct_meal"/>
-  </div>
- 
-  <div>
-    <button type="submit" id="submit-form">Submit</button>
-  </div>
-
+    <input type="checkbox" name="incorrect_meal" value="1">Tick if meal different to menu
+    <br>
+    <br>
+    <br>
+    <label></label>
+    <textarea name="comment" rows="3" cols="47" placeholder="[Optional] Have a comment? Looking for honest, useful feedback. 140 characters max!"></textarea>
+    <br>
+    <br>
+    <label>[Required] Lastly, zid please</label>
+    <input type="text" name="zid" placeholder="z1234567" />
+    <br>
+    <div>
+        <button type="submit" id="submit-form">Send it!</button>
+    </div>
 </form>
-
-
-
-
 {% endblock %}

@@ -52,13 +52,19 @@ $(document).ready(function() {
     var url = 'https://script.google.com/macros/s/AKfycbx6jc5jiJXbubMY0Zfi8PKkopNrSmAjUX3FBTl4RYI5914WaWv0/exec';
 
     $('#submit-form').on('click', function(e) {
+        var f = document.getElementsByTagName('form')[0];
+        if (f.checkValidity()) {
+            f.submit();
+        } else {
+            alert(document.getElementById('example').validationMessage);
+        }
 
         const data = $form.serializeObject()
 
-        data.dinner = mealsToday.Dinner;
-        data.vegetarian = mealsToday.Vegetarian;
+        data.main_meal = mealsToday.Dinner;
+        data.vegetarian_meal = mealsToday.Vegetarian;
         data.vegetables = JSON.stringify(mealsToday.Vegetables);
-
+        data.timestamp = moment().format();
         console.log(data)
         // data.diner = mealsToday.Dinner
         console.log("submitting form");
@@ -69,7 +75,7 @@ $(document).ready(function() {
             url: url,
             method: "GET",
             dataType: "json",
-            data 
+            data
         })
     });
 });

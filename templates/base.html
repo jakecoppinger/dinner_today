@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <title>Dinner Today</title>
     <meta charset="UTF-8">
@@ -7,15 +8,12 @@
     <meta name="author" content="Jake Coppinger">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-{#     <link rel="preload" href="fonts/akzidenz_grotesk_pro_med_regular/akzidenz_grotesk_pro_med_regular-webfont.woff2" as="font" type="font/woff2"> #}
-
-     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <meta name="apple-mobile-web-app-capable" content="yes" /> {#
+    <link rel="preload" href="fonts/akzidenz_grotesk_pro_med_regular/akzidenz_grotesk_pro_med_regular-webfont.woff2" as="font" type="font/woff2"> #}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/fonts.css')}}">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{url_for('static', filename='js/jquery.serialize-object.js')}}"></script>
-
     <script type="text/javascript">
     window.heap = window.heap || [], heap.load = function(e, t) {
         window.heap.appid = e, window.heap.config = t = t || {};
@@ -47,25 +45,27 @@
     heap.load(analyticsID);
     </script>
 </head>
+
 <body>
     <div id="app" v-cloak>
         <div id="header">
-            <h1 id="title"><a href="/">dinnertoday.info</a></h1>
-            {% raw %}
-            <h1 id="date">{{humanDate}}</h1>
-            {% endraw %}
+            <h1 id="title">dinnertoday.info</h1> {% raw %}
+            <h1 id="date">{{humanDate}}</h1> {% endraw %}
         </div>
         <div id="right-side-container">
-
             {% block body %} {% endblock %}
-
             <br>
+            
+        </div>
+        <div id="left-bottom-container">
+            {% block feedback %} {% endblock %}
+        </div>
+
+        <div id="footer-container">
             <div id="footer">
-                
                 <p>Built by Jake Coppinger
-                    <<a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a>>. Drop me a line if you have any ideas/feedback/bugs!</p>
-                <p>This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.
-                </p>
+                    <<a href="mailto:jake@jakecoppinger.com">jake@jakecoppinger.com</a>>. Drop me a line if you have any ideas/feedback/bugs! This project is open source on <a href="https://github.com/jakecoppinger/dinner_today">GitHub</a>, feel free to jump in and collaborate.</p>
+                <p>Feedback data is private by default, though Isabelle is likely to make insights public from time to time.</p>
             </div>
         </div>
     </div>
