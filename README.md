@@ -11,9 +11,11 @@ Implemented for a college at an Australian university. I have not included the n
 
 This project uses:
 
-- [Vue.js](https://vuejs.org/) for front-end rendering
+- [Vue.js](https://vuejs.org/) for (a little) front-end rendering
+- [Flask](http://flask.pocoo.org/) for templating and development, frozen with
+    [Frozen-Flask](https://pythonhosted.org/Frozen-Flask/) into a static site
 - [Mocha](https://mochajs.org/) for unit tests
-- [Webpack](https://webpack.js.org/) for combining scripts (through `require()`)
+- [Browserify](http://browserify.org/) for combining scripts
 
 To get started make sure you have Node and npm installed:
 
@@ -28,9 +30,9 @@ To get started make sure you have Node and npm installed:
 ### macOS
 Use [Homebrew](https://brew.sh/) to install npm.
 
-``
+```
 brew install node
-``
+```
 
 If you have any problems with the use of npm (*never* use sudo for npm) consult [this](https://gist.github.com/rcugut/c7abd2a425bb65da3c61d8341cd4b02d) guide.
 
@@ -58,7 +60,13 @@ npm run test
 npm run build
 ```
 
-After building simply open `dist/index.html` in your browser.
+### Development
+
+```
+npm run dev
+```
+
+This will spin up a Python webserver.
 
 ### Deploy
 Only I can do this, but if you want to deploy somewhere else just change around the folders in the script.
@@ -66,8 +74,6 @@ Only I can do this, but if you want to deploy somewhere else just change around 
 ```
 npm run deploy
 ```
-
-*Note:* There is a bug that if there are no changes npm reports `ERR! code ELIFECYCLE`. In this case just run `./deploy.sh`.
 
 ### Source notes
 
