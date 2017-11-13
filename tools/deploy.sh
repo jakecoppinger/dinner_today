@@ -3,8 +3,8 @@ set -e
 
 id="[dinnertoday.info deploy]"
 
-echo $id "Building..."
-npm run build
+echo $id "Building prod version..."
+npm run build:prod
 
 echo $id "Statically compiling..."
 npm run freeze

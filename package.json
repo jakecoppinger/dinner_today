@@ -13,14 +13,16 @@
     "moment": "^2.18.1",
     "uglify-es": "^3.1.9",
     "vue": "^2.4.2",
-    "vue-template-compiler": "^2.5.3"
+    "vue-template-compiler": "^2.5.3",
+    "watchify": "^3.9.0"
   },
   "scripts": {
     "test": "mocha",
     "dev": "python main.py",
     "deploy:test": "./tools/deploy-test.sh",
-    "build": "NODE_ENV=production ./tools/build.sh",
-    "build:dev": "./tools/build.sh",
+    "build:prod": "./tools/build-prod.sh",
+    "build": "./tools/build-dev.sh",
+    "watch": "watchify src/js/view.js -o static/js/bundle.js -v",
     "freeze": "rm -rf build && python freeze.py",
     "deploy": "./tools/deploy.sh",
     "clean": "rm -rf dist/",

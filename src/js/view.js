@@ -39,7 +39,7 @@ const vueData = {
     mealsTomorrow: dino.mealsOnDate(tomorrow),
     noMenu: !dino.menuExistsOnDate(today) && !dino.menuExistsOnDate(today),
     dinnerFinished: dinnerOver,
-    feedbackEnabled: false
+    feedbackEnabled: true
 }
 
 console.log('vuedata:', JSON.stringify(vueData,null,2))
