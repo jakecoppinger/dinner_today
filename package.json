@@ -22,7 +22,7 @@
     "build": "NODE_ENV=production ./tools/build.sh",
     "build:dev": "./tools/build.sh",
     "freeze": "rm -rf build && python freeze.py",
-    "deploy": "npm run build && ./tools/deploy.sh",
+    "deploy": "./tools/deploy.sh",
     "clean": "rm -rf dist/",
     "lint": "jshint --reporter=node_modules/jshint-stylish src/js/*",
     "serve:prod": "pushd build && python -m SimpleHTTPServer; popd"

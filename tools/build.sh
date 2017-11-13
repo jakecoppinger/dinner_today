@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # export PATH="$PWD/node_modules/.bin:$PATH"
