@@ -16,6 +16,7 @@
   "scripts": {
     "test": "mocha",
     "dev": "python main.py",
+    "deploy:test": "./tools/deploy-test.sh",
     "build": "./tools/build.sh",
     "freeze":"rm -rf build && python freeze.py",
     "deploy": "npm run build && ./tools/deploy.sh",
