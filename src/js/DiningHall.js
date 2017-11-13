@@ -18,9 +18,9 @@ DiningHall.prototype.mealsOnDate = function(m) {
 DiningHall.prototype.menuExistsOnDate = function(m) {
     var year = m.format("YYYY")
     var week = m.isoWeek(); //m.format("w");
-
+    var day = m.format("dddd");
     if(year in this.data
-        && week in this.data[year]) {
+        && week in this.data[year] && day in this.data[year][week]) {
         return true;
     }
     return false; 

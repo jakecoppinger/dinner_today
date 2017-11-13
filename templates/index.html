@@ -36,14 +36,14 @@
             </h3>
         </div>
     </div>
-    <div id="nomenu" v-if="noMenu">
-        <h2>New dinner menu starts on July 24. (week1, sem 2)</h2>
+    <div id="nomenu" v-if="noMenu || !mealsTomorrowData">
+        <h2>Tomorrow's menu will come out tomorrow morning. Using a secondary source, sorry!<br>(waiting on the new full menu)</h2>
     </div>
 {% endblock %}
 
 {% block feedback %}
 
-<form id="test-form">
+<form id="test-form" v-if="feedbackEnabled" >
     <p><i>This feedback is going direct to Isabelle so make it count!</i></p>
 
     <p><b>How was dinner today?</b>

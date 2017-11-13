@@ -1,0 +1,308 @@
+{
+    "2017": {
+        "41": {
+            "Monday": {
+                "Dinner": "Stir Fried Chicken In Black Bean Sauce With Jasmine Rice",
+                "Vegetarian": "Wok Tossed Choy Sum & Tofu With Egg Noodles",
+                "Vegetables": [
+                    "Steamed Rice",
+                    "Asian Cut Carrots",
+                    "Steamed Broccoli"
+                ]
+            },
+            "Tuesday": {
+                "Dinner": "Beef Or Chicken Enchiladas With A Tomato Cheese With Baked Mozzarella",
+                "Vegetarian": "Spicy Bean Enchiladas With A Tomato Sauce",
+                "Vegetables": [
+                    "Seared Zucchini",
+                    "Butter Beans With Shallots",
+                    "Steamed Corn"
+                ]
+            },
+            "Wednesday": {
+                "Dinner": "Madras Chicken Korma With Saffron Rice",
+                "Vegetarian": "Spicy Vegetable Dahl With Lentils And Vegetables",
+                "Vegetables": [
+                    "Sate Vegetables",
+                    "Steamed, Cauliflower Pilaf Rice"
+                ]
+            },
+            "Thursday": {
+                "Dinner": "Lamb Pastichio",
+                "Vegetarian": "Vegetable Pastichio with Chick peas",
+                "Vegetables": [
+                    "Medley Of Beans,",
+                    "Vegetable Ratatouille"
+                ]
+            },
+            "Friday": {
+                "Dinner": "Grilled Chicken Pieces served with a Mushroom Sauce",
+                "Vegetarian": "Zucchini, Cannellini Bean And Red Pepper Risotto",
+                "Vegetables": [
+                    "Penne Pasta",
+                    "Corn Kernels",
+                    "Broccoli Flourettes"
+                ]
+            },
+            "Saturday": {
+                "Dinner": "Steak Sandwiches On Ciabatta Bread With Caramelised Onions And French Fries",
+                "Vegetarian": "Grilled Vegetable And Tofu Skewers Served With Jasmine Rice And Sate Sauce",
+                "Vegetables": [
+                    "French Fries",
+                    "Broccoli Flourettes",
+                    "Minted Peas"
+                ]
+            },
+            "Sunday": {
+                "Dinner": "Grilled Chicken Schnitzel Served With A Red Wine Sauce",
+                "Vegetarian": "Leek, Zucchini & Red Pepper Strudel Served With A Cream Pesto Sauce",
+                "Vegetables": [
+                    "Baked Paprika Potatoes",
+                    "Cauliflower Mornay",
+                    "Corn On The Cob"
+                ]
+            }
+        },
+        "42": {
+            "Monday": {
+                "Dinner": "Indian Style Buttered Chicken Served With Fragrant Rice",
+                "Vegetarian": "Tomato ,Chick Pea And Tofu Vindaloo",
+                "Vegetables": [
+                    "Stir Fried Vegetables Wok Tossed Asian Greens"
+                ]
+            },
+            "Tuesday": {
+                "Dinner": "Slow Baked Roast Beef With A Mustard Gravy",
+                "Vegetarian": "Polenta & Vegetable Stacks With Marinated Tofu",
+                "Vegetables": [
+                    "Crunchy Roasted Potato",
+                    "Honey Pumpkin Wedges With Sesame",
+                    "Minted Peas"
+                ]
+            },
+            "Wednesday": {
+                "Dinner": "Grilled Chicken with French Fries",
+                "Vegetarian": "Quinoa Casserole with Okra and Mushrooms",
+                "Vegetables": [
+                    "French Fries",
+                    "Steamed Broccoli",
+                    "Corn Kennels with Chives"
+                ]
+            },
+            "Thursday": {
+                "Dinner": "Grilled Rump Steak With A Pink Peppercorn Sauce",
+                "Vegetarian": "Homemade Vegetable Parcels In Flaky Filo Pastry",
+                "Vegetables": [
+                    "Cream Potatoes",
+                    "Steamed Carrots",
+                    "Medley Of Beans"
+                ]
+            },
+            "Friday": {
+                "Dinner": "Crumbed Or Tempura Battered Fish Fillets With A Homemade Tartare Sauce",
+                "Vegetarian": "Cajun Tofu Steaks With Chunky Grilled Vegetables",
+                "Vegetables": [
+                    "French Fries",
+                    "Steamed Broccoli",
+                    "Sesame Carrot Batons With Parsley"
+                ]
+            },
+            "Saturday": {
+                "Dinner": "Grilled Chicken Breast Fillet With Sun Dried Tomato And Baby Spinach Sauce",
+                "Vegetarian": "Leek & Zucchini Burger On Pumpkin Rolls With Caramelised Onion",
+                "Vegetables": [
+                    "Mashed Potato",
+                    "Baked Zucchini Sticks With Red Pepper"
+                ]
+            },
+            "Sunday": {
+                "Dinner": "Spaghetti Bolognaise",
+                "Vegetarian": "Spaghetti Primavera",
+                "Vegetables": [
+                    "Steamed Carrots",
+                    "Steamed Peas",
+                    "Cauliflower"
+                ]
+            }
+        },
+        "43": {
+            "Monday": {
+                "Dinner": "Cajun Spiced Chicken Breast With A Moroccan Saffron Sauce",
+                "Vegetarian": "Pumpkin, Chicken And Ricotta Hunza Rolls",
+                "Vegetables": [
+                    "Mashed Potatoes Sesame Honey Pumpkin, Peas & Bean Medley"
+                ]
+            },
+            "Tuesday": {
+                "Dinner": "Grilled Rump Steaks Served With A Pink Peppercorn Sauce",
+                "Vegetarian": "Sweet Potato, Lemon And Roasted Peppers Risotto Cakes",
+                "Vegetables": [
+                    "Steamed Broccoli With Red Peppers Cream Potatoes Baton Carrots"
+                ]
+            },
+            "Wednesday": {
+                "Dinner": "Spiced Diced Lamb With Yoghurt And Chermula And Cous Cos",
+                "Vegetarian": "Vegetable Tagine With Chick Peas And Fruits",
+                "Vegetables": [
+                    "Cumin Spiced Potatoes Corn Kernels, Steamed Cauliflower With Chives"
+                ]
+            },
+            "Thursday": {
+                "Dinner": "Mild Thai Green Chicken Curry With Lemongrass And Coriander",
+                "Vegetarian": "Vegetable Pad Thai With Coriander, Lime Leaves And Bean Sprouts",
+                "Vegetables": [
+                    "Pilaf Rice,",
+                    "Stir Fried Vegetables",
+                    "Crunchy Poppadums"
+                ]
+            },
+            "Friday": {
+                "Dinner": "Traditional Beef Lasagne With A Crunchy Mozzarella Topping",
+                "Vegetarian": "Potato Gnocchi With A Lemon, Roasted Garlic And Oregano Sauce",
+                "Vegetables": [
+                    "Grilled Zucchinis Carrot Batons Corn On The Cob"
+                ]
+            },
+            "Saturday": {
+                "Dinner": "Grilled Chicken Maryland's With A Peri Peri Seasoning",
+                "Vegetarian": "Vegetable & Polenta Stacks With A Mushroom Sauce",
+                "Vegetables": [
+                    "Potato Wedges, Steamed Broccoli, Sesame And Honey Pumpkin"
+                ]
+            },
+            "Sunday": {
+                "Dinner": "Stir Fried Beef In Oyster Sauce With Crunchy Vegetables Served With Prawn Crackers",
+                "Vegetarian": "Stir Fried Vegetable And Tofu Singapore Noodles",
+                "Vegetables": [
+                    "Wok Tossed Asian Greens, Seamed Asian Cut Carrots, Steamed Jasmine Rice"
+                ]
+            }
+        },
+        "44": {
+            "Monday": {
+                "Dinner": "Seared Chicken Breast With A Spinach And Seeded Mustard Sauce",
+                "Vegetarian": "Filled Peppers With Rice, Quinoa And Vegetables",
+                "Vegetables": [
+                    "Mashed Potato",
+                    "Carrot Batons",
+                    "Butter Beans With Shallots"
+                ]
+            },
+            "Tuesday": {
+                "Dinner": "Roasted Beef Rump With A Brown Onion Gravy Or Quarter Chicken",
+                "Vegetarian": "Grilled Vegetables With Chick Peas In Potato Shells",
+                "Vegetables": [
+                    "Baked Potatoes",
+                    "Sesame Pumpkin Pieces",
+                    "Green Beans"
+                ]
+            },
+            "Wednesday": {
+                "Dinner": "Pizza & Pasta Night",
+                "Vegetarian": "Pizza & Pasta Night",
+                "Vegetables": [
+                    "Roasted Zucchini Wedges",
+                    "Peas & Corn Medley"
+                ]
+            },
+            "Thursday": {
+                "Dinner": "Grilled Rump Steak With A Mushroom Sauce",
+                "Vegetarian": "Spinach, Vegetable & Tofu Triangles",
+                "Vegetables": [
+                    "Mashed Potatoes",
+                    "Medley Of Beans",
+                    "Honey Carrots With Parsley"
+                ]
+            },
+            "Friday": {
+                "Dinner": "Beef Ravioli With A Tomato Napoli Sauce",
+                "Vegetarian": "Spinach And Ricotta Ravioli With A Cream Pesto Sauce",
+                "Vegetables": [
+                    "Garlic Bread",
+                    "Grilled Zucchinis",
+                    "Butter Beans With Red Peppers"
+                ]
+            },
+            "Saturday": {
+                "Dinner": "Lamb Rogan Josh Served With Basmati Rice And Poppadums",
+                "Vegetarian": "Vegetable Biryani With Chick Peas Served With Naan Bread",
+                "Vegetables": [
+                    "Asian Greens With Bean Shoots",
+                    "Honey Carrot Rings Minted Peas"
+                ]
+            },
+            "Sunday": {
+                "Dinner": "Grilled Chicken With A Peri Peri Sauce",
+                "Vegetarian": "Zucchini, Potato And Sun Dried Tomato Risotto Cakes With Lentils",
+                "Vegetables": [
+                    "Green Beans With Zucchini",
+                    "Corn",
+                    "Carrot Rings"
+                ]
+            }
+        },
+        "45": {
+            "Monday": {
+                "Dinner": "Stir Fried Chicken In Black Bean Sauce With Jasmine Rice",
+                "Vegetarian": "Wok Tossed Choy Sum & Tofu With Egg Noodles",
+                "Vegetables": [
+                    "Steamed Rice",
+                    "Asian Cut Carrots",
+                    "Steamed Broccoli"
+                ]
+            },
+            "Tuesday": {
+                "Dinner": "Beef Or Chicken Enchiladas With A Tomato Cheese With Baked Mozzarella",
+                "Vegetarian": "Spicy Bean Enchiladas With A Tomato Sauce",
+                "Vegetables": [
+                    "Seared Zucchini",
+                    "Butter Beans With Shallots",
+                    "Steamed Corn"
+                ]
+            },
+            "Wednesday": {
+                "Dinner": "Madras Chicken Korma With Saffron Rice",
+                "Vegetarian": "Spicy Vegetable Dahl With Lentils And Vegetables",
+                "Vegetables": [
+                    "Sate Vegetables",
+                    "Steamed, Cauliflower Pilaf Rice"
+                ]
+            },
+            "Thursday": {
+                "Dinner": "Italian Style Beef Lasagne With A Mozzarella Topping",
+                "Vegetarian": "Vegetable Lasagne With Chick Peas",
+                "Vegetables": [
+                    "Medley Of Beans,",
+                    "Vegetable Ratatouille"
+                ]
+            },
+            "Friday": {
+                "Dinner": "Chicken and Mushroom Pie with Puff Pastry",
+                "Vegetarian": "Zucchini, Cannellini Bean And Red Pepper Pot Pies",
+                "Vegetables": [
+                    "Mashed Potatoes",
+                    "Corn Kernels",
+                    "Broccoli Flourettes"
+                ]
+            },
+            "Saturday": {
+                "Dinner": "Steak Sandwiches On Ciabatta Bread With Caramelised Onions And French Fries",
+                "Vegetarian": "Grilled Vegetable And Tofu Skewers Served With Jasmine Rice And Sate Sauce",
+                "Vegetables": [
+                    "French Fries",
+                    "Broccoli Flourettes",
+                    "Minted Peas"
+                ]
+            },
+            "Sunday": {
+                "Dinner": "Grilled Chicken Schnitzel Served With A Red Wine Sauce",
+                "Vegetarian": "Leek, Zucchini & Red Pepper Strudel Served With A Cream Pesto Sauce",
+                "Vegetables": [
+                    "Baked Paprika Potatoes",
+                    "Cauliflower Mornay",
+                    "Corn On The Cob"
+                ]
+            }
+        }
+    }
+}

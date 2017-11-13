@@ -31,17 +31,22 @@ if (today.hours() >= dinnerEnd.hours &&
 
 var dino = new DiningHall(data);
 
+const vueData = {
+    humanDate: humanDate(today),
+    mealsTodayData: dino.menuExistsOnDate(today),
+    mealsTomorrowData: dino.menuExistsOnDate(tomorrow),
+    mealsToday: dino.mealsOnDate(today),
+    mealsTomorrow: dino.mealsOnDate(tomorrow),
+    noMenu: !dino.menuExistsOnDate(today) && !dino.menuExistsOnDate(today),
+    dinnerFinished: dinnerOver,
+    feedbackEnabled: false
+}
+
+console.log('vuedata:', JSON.stringify(vueData,null,2))
+
 var vueapp = new Vue({
     el: '#app',
-    data: {
-        humanDate: humanDate(today),
-        mealsTodayData: dino.menuExistsOnDate(today),
-        mealsTomorrowData: dino.menuExistsOnDate(tomorrow),
-        mealsToday: dino.mealsOnDate(today),
-        mealsTomorrow: dino.mealsOnDate(tomorrow),
-        noMenu: !dino.menuExistsOnDate(today) && !dino.menuExistsOnDate(today),
-        dinnerFinished: dinnerOver
-    }
+    data: vueData
 });
 
 
