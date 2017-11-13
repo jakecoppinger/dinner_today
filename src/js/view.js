@@ -23,10 +23,11 @@ const dinnerEnd = {
 }
 
 // Check if dinner has finished
-var dinnerOver = false;
-if (today.hours() >= dinnerEnd.hours &&
-    today.minutes() > dinnerEnd.minutes) {
-    dinnerOver = true;
+var dinnerFinished = false;
+
+if (today.hours() > dinnerEnd.hours || (today.hours() === dinnerEnd.hours &&
+    today.minutes() > dinnerEnd.minutes)) {
+    dinnerFinished = true;
 }
 
 var dino = new DiningHall(data);
@@ -38,8 +39,8 @@ const vueData = {
     mealsToday: dino.mealsOnDate(today),
     mealsTomorrow: dino.mealsOnDate(tomorrow),
     noMenu: !dino.menuExistsOnDate(today) && !dino.menuExistsOnDate(today),
-    dinnerFinished: dinnerOver,
-    feedbackEnabled: true
+    dinnerFinished,
+    feedbackEnabled: false
 }
 
 console.log('vuedata:', JSON.stringify(vueData,null,2))
