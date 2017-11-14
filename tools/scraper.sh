@@ -6,3 +6,5 @@ echo "$data" > tools/scraped-data.txt
 
 
 node tools/scraper.js > src/data/data.json
+
+rm tools/scraped-data.txt
