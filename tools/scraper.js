@@ -6,8 +6,8 @@ const rawData = fs.readFileSync('./tools/scraped-data.txt', 'utf8')
 const lines = rawData.split("\n");
 
 const Dinner = lines[0];
-const Vegetables = lines[1];
-const Vegetarian = lines[2];
+const Vegetarian = lines[1];
+const Vegetables = lines[2];
 
 
 const week = moment().isoWeek();
